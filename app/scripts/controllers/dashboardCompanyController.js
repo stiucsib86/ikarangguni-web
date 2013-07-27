@@ -8,24 +8,14 @@ function DashboardCompanyNotificationCtrl($http, $location, $rootScope, $scope, 
     $http({
       method: 'GET',
       withCredentials: true,
-      url: $rootScope._app.url.api + 'user/',
+      url: $rootScope._app.url.api + 'notification/',
       params: {
         //callback: 'JSON_CALLBACK'
-        notification_id: $routeParams.notification_id
+        id: $routeParams.notification_id
       }
     }).success(function(data, status, headers, config) {
 
-
-
-      $scope.notification = {
-        photo: 'http://www.zerowastesg.com/wp-content/uploads/2009/02/recycling-bins-3.jpg',
-        location: 'Singapore 550425',
-        sender: {
-          name: 'Goh Bing Han',
-          email: 'stiucsib86@hotmail.com'
-        }
-      };
-
+      $scope.notification = data.data;
 
     }).error(function(data, status, headers, config) {
       console.warn(data);
@@ -75,31 +65,13 @@ function DashboardCompanyNotificationsCtrl($http, $location, $rootScope, $scope)
     $http({
       method: 'GET',
       withCredentials: true,
-      url: $rootScope._app.url.api + 'user/',
+      url: $rootScope._app.url.api + 'notifications/',
       params: {
         //callback: 'JSON_CALLBACK'
       }
     }).success(function(data, status, headers, config) {
 
-      $scope.notifications = [
-        {
-          notification_id: 1,
-          photo: 'http://www.zerowastesg.com/wp-content/uploads/2009/02/recycling-bins-3.jpg',
-          location: 'Singapore 550425',
-          sender: {
-            name: 'Goh Bing Han',
-            email: 'stiucsib86@hotmail.com'
-          }
-        }, {
-          notification_id: 2,
-          photo: 'http://www.zerowastesg.com/wp-content/uploads/2009/02/recycling-bins-3.jpg',
-          location: 'Singapore 550425',
-          sender: {
-            name: 'Goh Bing Han',
-            email: 'stiucsib86@hotmail.com'
-          }
-        }
-      ];
+      $scope.notifications = data.data;
 
     }).error(function(data, status, headers, config) {
       console.warn(data);

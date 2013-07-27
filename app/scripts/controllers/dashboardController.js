@@ -50,9 +50,9 @@ function DashboardCalendarCtrl($filter, $http, $location, $rootScope, $scope) {
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    
+
     console.log('start',start.toString());
-    
+
     $http({
       method: 'GET',
       withCredentials: true,
@@ -79,7 +79,7 @@ function DashboardCalendarCtrl($filter, $http, $location, $rootScope, $scope) {
     callback(events);
   };
 
-  /* 
+  /*
    * Calendar Events
    */
 
@@ -187,8 +187,30 @@ function DashboardCalendarCtrl($filter, $http, $location, $rootScope, $scope) {
   /* event sources array*/
   $scope.eventSources = [$scope.eventsF];
 
+}
 
+function HistoryCtrl($http, $location, $rootScope, $scope) {
 
+  $scope.GetHistory = function() {
+    $http({
+      method: 'GET',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'notifications/history/',
+      params: {
+        //callback: 'JSON_CALLBACK'
+      }
+    }).success(function(data, status, headers, config) {
+
+      $scope.history = data.data;
+
+    }).error(function(data, status, headers, config) {
+      console.warn(data);
+    });
+  };
+
+  (function() {
+    $scope.GetHistory();
+  })();
 
 }
 
