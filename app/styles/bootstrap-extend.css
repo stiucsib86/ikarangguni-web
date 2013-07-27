@@ -38,6 +38,7 @@
   border-bottom: 1px solid #eee;
 }
 .hero-unit {
+  padding: 6%;
   background: #fcfaf9;
   background: -moz-linear-gradient(top, #fcfaf9 15%, #eeedea 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#fcfaf9), color-stop(100%,#eeedea));
