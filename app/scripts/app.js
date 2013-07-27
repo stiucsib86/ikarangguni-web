@@ -51,6 +51,10 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
 	  templateUrl: 'views/v1/cleaning/history.html',
 	  controller: 'HistoryCtrl'
   })
+.when('/recycle/success', {
+		templateUrl: 'views/v1/cleaning/success.html',
+		controller: 'HistoryCtrl'
+	})
   .when('/recycle/history/:notification_id', {
     templateUrl: 'views/v1/cleaning/history-item.html',
     controller: 'DashboardCompanyNotificationCtrl'
