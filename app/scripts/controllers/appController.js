@@ -12,9 +12,9 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
   jQuery.extend(true, $rootScope, {
     _app: {
       debug: true,
-      title: 'iKarangGuni',
+      title: 'iKarungGuni',
       page: {
-        title: ' | Get your place cleaned.'
+        title: ' | Accepts poh zhua, gu sa kor, pai leh-lio, dian si ki...'
       }
     },
     _page: {
