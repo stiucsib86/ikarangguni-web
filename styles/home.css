@@ -173,7 +173,7 @@ body {
   text-align: center;
   font-style: normal;
   color: #9a9a9a;
-  background: url(/images/homepage/login-sprite.png) center 19px no-repeat;
+  background: url(../images/homepage/login-sprite.png) center 19px no-repeat;
 }
 
 .login-form-container .input-background {

@@ -45,7 +45,7 @@
 }
 
 .loading-spinner-32 {
-  background-image: url(/images/spinners/spinner-white-32.gif);
+  background-image: url(../images/spinners/spinner-white-32.gif);
   vertical-align: middle;
   margin: 0;
   height: 32px;
@@ -54,7 +54,7 @@
 }
 
 .loading-dots {
-  background-image: url(/images/spinners/loading-dots.gif);
+  background-image: url(../images/spinners/loading-dots.gif);
   vertical-align: middle;
   margin: 0;
   height: 14px;
@@ -75,7 +75,7 @@
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  background: rgba(0, 0, 0, 0.2) url(/images/homepage/connect-button-sprite-283x55.png) no-repeat 10px 10px;
+  background: rgba(0, 0, 0, 0.2) url(../images/homepage/connect-button-sprite-283x55.png) no-repeat 10px 10px;
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15),inset 0 1px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15),inset 0 1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15),inset 0 1px 0 rgba(0, 0, 0, 0.15);
