@@ -84,13 +84,13 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
   /*
    * /company/notification
    */
-  .when('/dashboard/company/notification/:notification_id', {
-    templateUrl: 'views/v1/dashboard/company/notification.html',
-    controller: 'DashboardCompanyNotificationCtrl'
-  })
   .when('/dashboard/company/notifications', {
     templateUrl: 'views/v1/dashboard/company/notifications.html',
     controller: 'DashboardCompanyNotificationsCtrl'
+  })
+  .when('/dashboard/company/notifications/:notification_id', {
+    templateUrl: 'views/v1/dashboard/company/notification.html',
+    controller: 'DashboardCompanyNotificationCtrl'
   })
   .when('/dashboard/company/settings', {
     templateUrl: 'views/v1/dashboard/company/settings.html',

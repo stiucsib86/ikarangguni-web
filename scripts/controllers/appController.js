@@ -82,10 +82,10 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
   if (document.location.hostname.indexOf('localhost') !== -1) {
     // Localhost
     //$rootScope._app.url.api = '//ikarangguni.duapp.com/';
-    $rootScope._app.url.api = '//ikarangguni-phpmyadmin.ap01.aws.af.cm/';
+    $rootScope._app.url.api = '//ikarangguni-api.ap01.aws.af.cm/';
   } else {
     // Live Server
-    $rootScope._app.url.api = '//ikarangguni-phpmyadmin.ap01.aws.af.cm/';
+    $rootScope._app.url.api = '//ikarangguni-api.ap01.aws.af.cm/';
   }
 
   /*
