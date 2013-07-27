@@ -1,0 +1,60 @@
+<footer class="footer clearfix" ng-controller="footerCtrl">
+  <div class="container">
+    <div class="row-fluid">
+
+      <div class="span3">
+        <h5>Location Settings</h5>
+        <div class="language-curr-picker clearfix">
+
+          <select class="span5 lang-selector" ng-model="global_locale" ng-options="ll.value as ll.label for ll in const.locale_list" data-style="btn" bs-select></select>
+          <select class="span5 curr-selector" ng-model="global_currency" ng-options="c.value as c.icon_label for c in const.currencies" data-style="btn" bs-select></select>
+            
+        </div>
+      </div>
+
+      <div class="span3">
+        <h5>Discover</h5>
+        <ul class="unstyled js-footer-links">
+          <li><a href="/safety">Safety</a></li>
+          <li><a href="/wishlists/getmaidapp_picks">GetMaidApp Picks</a></li>
+          <li><a href="/mobile">Mobile</a></li>
+          <li><a href="/life">Life</a></li>
+          <li><a href="/info/how_it_works">How it works</a></li>
+          <li><a href="/info/why_host">Why Host</a></li>
+          <li><a href="/social">Social Connections</a></li>
+        </ul>
+      </div>
+
+      <div class="span3">
+        <h5>Company</h5>
+        <ul class="unstyled js-footer-links">
+          <li><a href="/about">About</a></li>
+          <li><a href="/jobs">Jobs</a></li>
+          <li><a href="/press">Press</a></li>
+          <li><a href="http://blog.getmaidapp.com">Blog</a></li>
+          <li><a href="/help">Help</a></li>
+          <li><a href="/policies">Policies</a></li>
+          <li><a href="/responsible-hosting">Responsible Hosting</a></li>
+          <li><a href="/terms">Terms &amp; Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="span3">
+        <h5>Follow us</h5>
+        <ul class="unstyled js-external-links">
+          <li><a href="//twitter.com/getmaidapp" target="_blank">Twitter</a></li>
+          <li><a href="//www.facebook.com/getmaidapp" target="_blank">Facebook</a></li>
+          <li><a href="https://plus.google.com/+getmaidapp?rel=author" target="_blank">Google</a></li>
+          <li><a href="http://www.youtube.com/getmaidapp" target="_blank">YouTube</a></li>
+        </ul>
+        <div id="copyright">
+          &copy; Get Maid App.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Facebook Initialization -->
+<div id="fb-root" ng-controller="FacebookCtrl"></div>

@@ -1,0 +1,49 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <h2><i class="icon-question-sign"></i> Contacts</h2>
+          </div>
+          <div class="middle">
+
+            <div class="notice">
+              These are your maid profile contact that will be made public to your clients.
+            </div>
+
+            <form class="form-horizontal">
+
+              <div class="control-group">
+                <label class="control-label" for="contacts_phone">Phone Number</label>
+                <div class="controls">
+                  <input type="text" id="contacts_phone" ng-model="profile.contacts.phone" placeholder="(+65) 1111-1111">
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="contacts_phone">Email</label>
+                <div class="controls">
+                  <input type="text" id="contacts_email" ng-model="profile.contacts.email" placeholder="john.doe@email.com">
+                </div>
+              </div>
+
+            </form>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

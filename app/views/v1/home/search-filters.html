@@ -1,0 +1,99 @@
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseOne">
+        Base Rate
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner panel-padding">
+
+        <ul id="slider_values" class="unstyled slider-values">
+          <li id="slider_user_min" class="label pull-left">{{_search_filter.base_rate_range.min | number:0 | currency}}</li>
+          <li id="slider_user_max" class="label pull-right">{{_search_filter.base_rate_range.max | number:0 | currency}}</li>
+        </ul>
+        <div id="slider-range"></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <div class="accordion-toggle pull-right">
+        ( {{_search_filter.services.length}} selected )
+      </div>
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseTwo">
+        Service Type 
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse in">
+      <div class="accordion-inner">
+
+        <ul id="room-type-container" class="unstyled search_filter_content panel-padding">
+          <li ng-repeat="service in _page.search_filters.services">
+            <label class="checkbox ">
+              <input type="checkbox" ng-model="service.checked" name="{{service.service_name}}" />
+              {{service.service_name}}
+            </label>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseTwo">
+        Min Rating
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse in">
+      <div class="accordion-inner">
+
+        <div class="label pull-left ng-binding">Min: {{_search_filter.rating.min}} star</div>
+
+        <rating value="_search_filter.rating.min" max="10"></rating>
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseThree">
+        Country of Origin
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse in">
+      <div class="accordion-inner">
+
+        <ul id="room-type-container" class="unstyled search_filter_content panel-padding">
+          <li ng-repeat="country in _page.search_filters.country_of_origin_list">
+            <label class="checkbox ">
+              <input type="checkbox" ng-model="country.checked" name="{{country.country_name}}">
+              <span ng-bind-html-unsafe="country.country_name"></span>
+            </label>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#collapseThree">
+        Keywords
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse in">
+      <div class="accordion-inner">
+
+        <div class="form-search">
+          <input ng-model-onblur ng-model="_search_filter.keywords" type="text" class="input-medium search-query" placeholder="Enter keywords...">
+          <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

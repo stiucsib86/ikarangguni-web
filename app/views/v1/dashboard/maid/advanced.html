@@ -1,0 +1,41 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <h2><i class="icon-question-sign"></i> Advanced Settings</h2>
+          </div>
+          <div class="middle">
+
+            <form class="form-horizontal">
+
+              <div class="control-group">
+                <label class="control-label" for="name_first">Cancellation Policy</label>
+                <div class="controls">
+                  <select class="input-xlarge" ng-model="maid_settings.cancellation_policy_id" ng-options="cp.value as cp.label for cp in const.cancellation_policies"></select>
+                  <span class="help-inline">
+                    <a href="#/p/cancellation_poicies" target="_blank">Learn more</a>
+                  </span>
+                </div>
+              </div>
+
+            </form>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

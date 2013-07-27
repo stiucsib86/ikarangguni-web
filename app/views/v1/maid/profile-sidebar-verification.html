@@ -1,0 +1,51 @@
+<div class="accordion-group space2">
+
+  <div class="accordion-heading">
+    <h4 class="accordion-toggle">
+      Verifications
+    </h4>
+  </div>
+
+  <div class="accordion-inner panel-padding">
+
+    <div class="body">
+      <ul class="unstyled verifications-list">
+        <li class="verifications-list-item">
+          <div>
+            <i class="icon icon-phone"></i>
+          </div>
+          <div>
+            <h5>Phone Number</h5>
+            <h6>
+              <span ng-show="maid_profile.verifications.phone_number">Verified</span>
+              <span ng-hide="maid_profile.verifications.phone_number"><i>Pending</i></span>
+            </h6>
+          </div>
+        </li>
+        <li class="verifications-list-item">
+          <div>
+            <i class="icon icon-envelope-alt"></i>
+          </div>
+          <div>
+            <h5>Email Address</h5>
+            <h6>
+              <span ng-show="maid_profile.verifications.phone_number">Verified</span>
+              <span ng-hide="maid_profile.verifications.phone_number"><i>Pending</i></span>
+            </h6>
+          </div>
+        </li>
+        <li class="verifications-list-item">
+          <div>
+            <i class="icon icon-thumbs-up"></i>
+          </div>
+          <div>
+            <h5>Positively Reviewed</h5>
+            <h6>{{maid_profile.statistics.reviews.total_positive || 0}} Reviews</h6>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="reviews">
+  <h3 class="header-underline">
+    Reviews
+    <span class="light">({{maid_profile.statistics.reviews.total || 0}})</span>
+  </h3>
+
+
+  <div ng-hide="maid_profile.reviews._loading">
+
+    <div ng-show="maid_profile.reviews.length > 0">
+
+      <ul class="unstyled">
+        <li class="reviews-list-item space1 clearfix" ng-repeat="user in maid_profile.reviews">
+          <div class="row-fluid">
+
+            <div class="span2">
+              <div class="profile-pic pull-right">
+                <div class="img-matte">
+                  <a href="#/user/{{user.user_id}}" rel="nofollow">
+                    <img alt="{{user.name.display_name}}" class="lazy" data-original="" height="68" ng-src="{{user.profile_image.gravatar}}" title="{{user.name.display_name}}" width="68" style="display: inline;">
+                  </a>
+                </div>
+                <span class="name"><a href="#/user/{{user.user_id}}" rel="nofollow" ng-bind-html-unsafe="user.name.display_name"></a></span>
+              </div>
+            </div>
+
+            <div class="span10">
+              <div class="reviews speech-bubble">
+                <p class="message">
+                  Nice, clean place.  Very, very comfortable bed!!  
+                </p>
+                <div class="location pull-left">
+                  <span class="icon icon-home"></span>
+                  <a href="https://www.airbnb.com.sg/rooms/545685">Garden Suite with Private Bath</a>
+                </div>
+                <div class="date pull-right">{{'June 2013' | timeAgo}}</div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div ng-hide="maid_profile.reviews.length > 0">
+      <div class="no-result">
+        No reviews yet...
+      </div>
+    </div>
+
+  </div>
+
+  <div ng-show="maid_profile.reviews._loading">
+    <div class="loading-container loading-block-level">
+      <div class="loading-spinner"></div>
+      Loading...
+    </div>
+  </div>
+</div>

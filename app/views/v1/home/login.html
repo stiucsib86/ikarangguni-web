@@ -1,0 +1,70 @@
+<div class="page-background-1">
+  <div class="login-page-container">
+    <div class="container container-page space2">
+
+      <div class="row-fluid">
+
+        <div class="span4"></div>
+
+        <div class="span4">
+          <div class="login-form-container">
+
+            <div class="heading logo">
+              <img alt="{{_app.title}}" src="/images/logo-96.png">
+              <div>{{_app.title}}</div>
+            </div>
+
+            <form name="login_form">
+
+              <div>
+                <div class="sign-up">
+                  <a class="fb-connect button" ng-click="fb_login()">
+                    <div ng-show="login_form.fbc_btn._loading" class="spinner-btn-container">
+                      <div spin-js="config" color="#FFF"></div>
+                    </div>
+                  </a>
+                </div>
+
+                <em>or</em>
+              </div>
+
+              <fieldset>
+                <span class="input-background">@</span>
+                <input class="input-block-level" type="text" id="inputEmail" placeholder="Email Address">
+                <span class="input-background"><i class="icon-lock"></i></span>
+                <input class="input-block-level" type="password" id="inputPassword" placeholder="Password">
+                <label class="checkbox">
+                  <input type="checkbox"> Remember me
+                </label>
+
+                <div class="control-group">
+                  <div class="controls">
+                    <div ng-show="login_form.username._loading" class="loading-container loading-overlay" style="padding: 11px;right: 20px;left: 20px;">
+                      <div class="loading-dots"></div>
+                    </div>
+                    <button type="submit" class="btn btn-large input-block-level btn-primary">Sign in</button>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="" style="text-align: center;">
+                <a href="#/forget-password">Forgot password?</a>
+              </div>
+
+            </form>
+
+            <div class="bottom">
+              Don't have an account? <a href="#/register">Sign up here <span></span></a>!
+            </div>
+
+          </div>
+        </div>
+
+        <div class="span4"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="accordion-group space2">
+
+  <div class="accordion-inner panel-padding">
+
+    <div class="profile_pic simple-slideshow">
+      <a href="#/user/{{maid_profile.user_id}}">
+        <img class="img-polaroid" ng-src="{{maid_profile.profile_image.gravatar + '?s=280'}}" title="{{maid_profile.name.display_name}}" style="box-sizing: border-box;" />
+      </a>
+    </div>
+
+
+    <div class="tooltip tooltip-panel-light tooltip-panel-collapse fade" id="verifications-tooltip">
+      <div class="panel-header-gray verified_header"><h4>Verifications</h4></div>
+      <div class="panel-padding">
+        Linda has completed online and offline ID verification.
+        <p><a href="/support/question/450">Learn more »</a></p>
+      </div>
+    </div>
+
+    <div class="caption">
+      <h4 class="name shift">
+        <span class="verification_user_name" ng-bind-html-unsafe="maid_profile.name.display_name"></span>
+      </h4>
+      <h5 class="location" ng-bind-html-unsafe="maid_profile.location.formatted_address"></h5>
+      <h6 class="join_year">Member since {{maid_profile.created_on | date:'MMMM yyyy' }}</h6>
+    </div>
+    <div class="hidden" id="contact_wrapper">
+      <a href="/users/2676602/contact" class="btn large gray" id="user_contact_link"> Contact Me </a>
+    </div>
+
+  </div>
+
+</div>

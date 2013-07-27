@@ -1,0 +1,42 @@
+<div class="container container-page space2">
+
+  <div class="row-fluid">
+    
+    <div ng-hide="user_profile._loading">
+      
+      <div ng-hide="user_profile._error">
+        <div class="span3">
+          <div ng-include="'/views/v1/user/profile-sidebar-basicinfo.html'"></div>
+          <div ng-include="'/views/v1/user/profile-sidebar-verification.html'"></div>
+          <div ng-include="'/views/v1/user/profile-sidebar-listings.html'"></div>
+        </div>
+
+        <div class="span9">
+          <div ng-include="'/views/v1/user/profile-heading.html'"></div>
+          <div ng-include="'/views/v1/user/profile-statistics.html'"></div>
+          <div ng-include="'/views/v1/user/profile-reviews.html'"></div>
+        </div>
+      </div>
+      
+      <div ng-show="user_profile._error">
+        <div class="loading-container loading-page-level">
+          <i class="icon-unlink"></i> Failed to load maid profile...
+        </div>
+      </div>
+      
+    </div>
+
+    <div ng-show="user_profile._loading">
+      <div class="loading-container loading-page-level">
+        <div class="loading-spinner"></div>
+        Loading...
+      </div>
+    </div>
+
+  </div>
+
+  <div class="clearfix"></div>
+
+</div>
+
+<div class="clearfix"></div>

@@ -1,0 +1,10 @@
+[ui-calendar] .fc-event.available {
+  background: rgba(0,109,204,0.9);
+  color: #FFF;
+  border: 1px solid #DDD;
+}
+[ui-calendar] .fc-event.not-available {
+  background: rgba(201, 201, 201, 0.8);
+  color: #000;
+  border: 1px solid #AAA;
+}

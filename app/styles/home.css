@@ -1,0 +1,194 @@
+/* -----------------------------------------------------------------------------
+|   HTML
+| ------------------------------------------------------------------------------
+*/
+html { 
+  height: 100%; 
+}
+body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+}
+.container-page {
+  margin: 5px auto;
+  /*  background: #FCFCFC;
+    border: #F8F8F8;
+    box-shadow: 0px 1px 2px #CCC;*/
+}
+
+.header .nav-profile-img {
+  max-width: 28px;
+  margin: -6px 0;
+}
+.header + div {
+  height: 41px;
+}
+.search-icon-overlay {
+  position: relative;
+  margin-left: 5px;
+}
+.search-icon-overlay .search-icon {
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  margin: 7px;
+  opacity: 0.5;
+}
+.search-icon-overlay input.search-query:focus + .search-icon {
+  opacity: 1;
+}
+.search-icon-overlay input.search-query {
+  padding-left: 30px;
+}
+.footer {
+  font-size: 90%;
+  padding: 50px 0;
+}
+
+/* -----------------------------------------------------------------------------
+|   Maid List
+| ------------------------------------------------------------------------------
+*/
+
+.maid-list .profile-td {
+  width: 100px;
+  text-align: center;
+}
+
+.maid-list .price-td {
+  width: 100px;
+  text-align: center;
+}
+
+.maid-list .name {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.maid-list .base_rate {
+  font-size: 36px;
+  line-height: 44px;
+  padding: 2px 10px 0 0;
+}
+
+.maid-list .base_rate sup {
+  font-size: 24px;
+  font-weight: normal;
+  vertical-align: top;
+  line-height: 32px;
+  top: 0;
+}
+.maid-list .base_rate .modifier {
+  color: #848484;
+  font-size: 12px;
+  line-height: 1;
+}
+.maid-list .reputation {
+  padding-top: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+|   Search Page
+| ------------------------------------------------------------------------------
+*/
+
+#slider-range {
+  margin: 0 9px;
+}
+.slider-values {
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 11px;
+}
+.accordion-inner.panel-padding {
+  padding: 20px 15px;
+}
+
+/* -----------------------------------------------------------------------------
+|   Login Page
+| ------------------------------------------------------------------------------
+*/
+.login-page-container {
+  padding-top: 20px;
+}
+
+.login-form-container {
+  background-color: rgba(255,255,255,0.9);
+  -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.1),0 0 0 #000;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.1),0 0 0 #000;
+  border-radius: 4px;
+}
+
+.login-form-container .heading.logo {
+  background: #fcfaf9; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fcfaf9 15%, #eeedea 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#fcfaf9), color-stop(100%,#eeedea)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fcfaf9 15%,#eeedea 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fcfaf9 15%,#eeedea 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fcfaf9 15%,#eeedea 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fcfaf9 15%,#eeedea 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfaf9', endColorstr='#eeedea',GradientType=0 ); /* IE6-9 */
+
+  margin: 0 auto 0 auto;
+  width: auto;
+  position: relative;
+  border-bottom: 1px solid #c3c3c3;
+  display: block;
+  padding: 20px 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.login-form-container form {
+  padding: 40px 20px;
+  position: relative;
+  margin: 0;
+}
+
+.login-form-container .loading-overlay {
+  left: 40%;
+}
+
+.login-form-container form input[type="text"],
+.login-form-container form input[type="password"] {
+  height: 45px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.login-form-container .fb-connect {
+  margin: auto;
+}
+
+.login-form-container em {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+  color: #9a9a9a;
+  background: url(/images/homepage/login-sprite.png) center 19px no-repeat;
+}
+
+.login-form-container .input-background {
+  position: absolute;
+  right: 30px;
+  font-size: 30px;
+  line-height: 45px;
+  color: #DDD;
+}
+
+.login-form-container .bottom {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #eeedea;
+  border-top: 1px solid #c3c3c3;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,58 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <h2><i class="icon-question-sign"></i> Profile Photo</h2>
+          </div>
+          <div class="middle">
+
+            <div class="row-fluid list-item">
+              <div class="span1 center">
+                <h3><i class="icon-user"></i></h3>
+              </div>
+              <div class="span2 center">
+                <img class="img-polaroid" ng-src="//www.gravatar.com/avatar/{{ fn.md5('stiucsib86@hotmail.com') }}?s=100" />
+              </div>
+              <div class="span6">
+                <h5>Gravatar</h5>
+                <p>
+                  <small>Change your gravatar image at <a href="http://www.gravatar.com/" target="_blank">http://www.gravatar.com/</a></small>
+                </p>
+              </div>
+              <div class="span3 center">
+                <button class="btn btn-large btn-primary">Default</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="span1">
+                <strong></strong>
+              </div>
+
+
+              <div class="span4">
+              </div>
+              <div>
+
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

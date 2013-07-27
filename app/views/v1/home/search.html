@@ -1,0 +1,119 @@
+<div class="row-fluid">
+
+  <div class="container">
+    <div class="google-map map-canvas-block"
+         center="gmaps.center"
+         bounds="gmaps.bounds"
+         zoom="gmaps.zoom" 
+         markers="gmaps.markers"
+         latitude="gmaps.clickedLocation.latitude"
+         longitude="gmaps.clickedLocation.longitude"
+         events="gmaps.eventsProperty"
+         draggable="true"
+         mark-click="true"
+         refresh="!gmaps.isMapElementHidden">
+    </div>
+  </div>
+
+  <div class="container container-page">
+
+    <div class="clearfix">&nbsp;</div>
+
+    <div class="hidden">
+      {{gmaps}} {{gmaps.center}} {{gmaps.bounds}}
+    </div>
+
+    <div class="row-fluid">
+
+      <div class="span3">
+
+          <div ng-include="'/views/v1/home/search-filters.html'"></div>
+
+      </div>
+
+      <div class="span9">
+
+        <div class="loading-container loading-overlay loading-large" ng-show="maid_list._loading">
+          <div class="loading-spinner"></div>
+          Loading...
+        </div>
+
+        <div class="maid-list">
+
+          <div class="well well-small">
+            Showing {{maid_list.data.length | number:0}} results.
+          </div>
+
+
+          <table class="table table-hover">
+            <tbody>
+              <tr ng-hide="maid_list.data.length > 0">
+                <td>
+                  <div class="no-result">
+                    No result.
+                  </div>
+                </td>
+              </tr>
+              <tr class="maid-profile" ng-repeat="maid in maid_list.data">
+                <td class="profile-td">
+                  <img ng-src="{{maid.profile_image.gravatar}}" class="img-polaroid">
+                </td>
+                <td>
+
+                  <div>
+                    <a class="name" href="#/maid/{{maid.user_id}}">
+                      <span ng-bind-html-unsafe="maid.name.display_name"></span>
+                    </a>
+                    —
+                    <small ng-bind-html-unsafe="maid.location.formatted_address"></small>
+                  </div>
+                  <div>
+                    <span ng-bind-html-unsafe="maid.bio"></span>
+                  </div>
+                  <div class="reputation">
+                    <ul class="unstyled">
+                      <li class="badge badge_type_reviews-bubble">
+                        <span class="badge_image">
+                          <span class="badge_text reviews-bubble">
+                            <i class="icon-quote-left"></i> {{maid.statistics.total_reviews || 0 | number:0}}
+                          </span>
+                        </span>
+                        <span class="badge_name">reviews</span>
+                      </li>
+                      <li class="badge badge_type_reviews-bubble">
+                        <span class="badge_image">
+                          <span class="badge_text reviews-bubble">
+                            <i class="icon-star"></i> {{maid.statistics.rating || 0 | number:0}} / 10
+                          </span>
+                        </span>
+                        <span class="badge_name">rating</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                </td>
+                <td class="price-td">
+                  <span class="base_rate">
+                    <sup>$</sup>
+                    {{maid.base_rate | number:0}}
+                    <div class="modifier">per hour</div>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="pull-right">
+            <div>
+              <pagination boundary-links="true" num-pages="maid_list._pagination.no_of_pages" current-page="maid_list._pagination.current_page" max-size="maid_list._pagination.max_size" previous-text="&laquo;" next-text="&raquo;"></pagination>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

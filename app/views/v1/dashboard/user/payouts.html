@@ -1,0 +1,55 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <h2><i class="icon-question-sign"></i> Payout Preferences</h2>
+          </div>
+          <div class="middle">
+
+            <form class="form">
+
+              <div class="row-fluid">
+                <div class="span4">
+                  <h5>Payout Methods</h5>
+                  <p>
+                    <small>When you receive a payment for a reservation, we call that payment to you a “payout”. Our secure payment system supports several payout methods, which can be setup and edited here. Your available payout options and currencies differ by country, and you can also use routing rules to split your payouts amongst a few different methods. </small>
+                  </p>
+                </div>
+                <div class="span8">
+
+                  <div ng-repeat="p in payout_methods">
+
+                  </div>
+
+                  <div ng-hide="payout_methods.length" class="no-result">
+                    You have not set up any methods for receiving payments.
+                  </div>
+
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-success"><i class="icon-plus-sign"></i> Add Payout Methods</button>
+                    <span class="help-inline"><small>PayPal, Bitcoin, Direct Deposit, etc...</small></span>
+                  </div>
+
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
