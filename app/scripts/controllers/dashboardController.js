@@ -13,7 +13,7 @@ function DashboardProfileCtrl($http, $location, $rootScope, $scope) {
         //callback: 'JSON_CALLBACK'
       }
     }).success(function(data, status, headers, config) {
-      $rootScope.auth = data;
+      $rootScope.user_profile = data;
     }).error(function(data, status, headers, config) {
       console.warn(data);
     });

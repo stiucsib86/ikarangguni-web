@@ -1,6 +1,9 @@
 /*
  * Bootstrap extends
  */
+.header .brand img {
+  margin: -8px 0;
+}
 .container.space2 {
   margin-top: 25px;
 }
@@ -33,6 +36,13 @@
   padding-bottom: 0.3em;
   margin-bottom: 0.5em;
   border-bottom: 1px solid #eee;
+}
+@media only screen 
+and (max-device-width: 600px)
+{ 
+  .hero-unit {
+    padding: 5% !important;
+  }
 }
 .hero-unit {
   background: #fcfaf9;
@@ -208,7 +218,7 @@ ul.responsiveness-list {
 /* Fixes for Bootstrap-Select */
 .bootstrap-select>.btn.input-small {
   width: 90px;
-  
+
 }
 .bootstrap-select.btn-group, .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: 0px !important;
