@@ -81,10 +81,10 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
   $rootScope._app.url = {};
   if (document.location.hostname.indexOf('localhost') !== -1) {
     // Localhost
-    $rootScope._app.url.api = '//api.getmaidapp.localhost/';
+    $rootScope._app.url.api = '//ikarangguni.duapp.com/';
   } else {
     // Live Server
-    $rootScope._app.url.api = '//api.getmaidapp.com/';
+    $rootScope._app.url.api = '//ikarangguni.duapp.com/';
   }
 
   /*
@@ -102,7 +102,7 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
    */
   if (typeof Facebook !== 'undefined') {
     Facebook.init({
-      appId: '618063441538197', // App ID
+      appId: '497232760353519', // App ID
       channelUrl: '/channel.html', // Channel File
       status: true, // check login status
       cookie: true, // enable cookies to allow the server to access the session

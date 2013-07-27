@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('getmaidappWebApp')
+angular.module('ikarangguniWebApp')
         .directive('mainDirective', function() {
   return {
     template: '<div></div>',

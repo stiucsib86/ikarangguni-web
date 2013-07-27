@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('getmaidappWebApp', ['ngCookies', 'FacebookProvider', 'google-maps', 'ui.bootstrap', 'ui.calendar', '$strap.directives'])
+angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-maps', 'ui.bootstrap', 'ui.calendar', '$strap.directives'])
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
   .when('/', {

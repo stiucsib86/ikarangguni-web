@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('getmaidappWebApp').value('$strapConfig', {
+angular.module('ikarangguniWebApp').value('$strapConfig', {
   datepicker: {
     format: 'mm/dd/yyyy'
   }
