@@ -20,7 +20,7 @@ function AuthCtrl($scope, $rootScope, $route, $routeParams, $http, $location) {
 
   $scope.$watch('auth', function() {
     if ($rootScope.auth && $rootScope.auth.user) {
-      console.log("Welcome " + $rootScope.auth.user.name.display_name);
+      //console.log("Welcome " + $rootScope.auth.user.name.display_name);
     }
   });
 
@@ -61,7 +61,7 @@ function FacebookCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 
   $rootScope.$on('event.fb.auth.login', function(event, args) {
     var authResponse = args.authResponse;
-    
+
     var $fbcbtn = $('.fb-connect.button');
     var $fbcbtn_scope = angular.element($fbcbtn).scope();
 
