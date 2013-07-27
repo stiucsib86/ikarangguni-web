@@ -58,6 +58,12 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 		});
 	};
 
+			}).error(function(data) {
+				console.warn(data);
+			});
+		};
+	}
+
 	$scope.StartSnapping = function() {
 
 		// Grab elements, create settings, etc.
@@ -91,7 +97,7 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 			$('#snap').css("display", "none");
 		});
 	};
-	
+
 	$scope.SelectKarangguni = function(){
 		$location.url('/clean/2');
 	};
@@ -114,6 +120,7 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
       $scope.getUserCenterMap();
     }
   };
+function HistoryCtrl($http, $location, $rootScope, $scope) {
 
   $scope.getUserCenterMap = function() {
     if ($scope.geolocationAvailable) {
@@ -127,6 +134,15 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
       });
     }
   };
+  $scope.GetHistory = function() {
+    $http({
+      method: 'GET',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'user/',
+      params: {
+        //callback: 'JSON_CALLBACK'
+      }
+    }).success(function(data, status, headers, config) {
 
 	$scope.SubmitItem = function(){
 		var itemPic = document.getElementById("canvas");
@@ -158,4 +174,33 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 	};
 	
 	$scope.StartSnapping();
+}      $scope.history = [
+        {
+          notification_id: 1,
+          photo: 'http://www.zerowastesg.com/wp-content/uploads/2009/02/recycling-bins-3.jpg',
+          location: 'Singapore 550425',
+          sender: {
+            name: 'Goh Bing Han',
+            email: 'stiucsib86@hotmail.com'
+          }
+        }, {
+          notification_id: 2,
+          photo: 'http://www.zerowastesg.com/wp-content/uploads/2009/02/recycling-bins-3.jpg',
+          location: 'Singapore 550425',
+          sender: {
+            name: 'Goh Bing Han',
+            email: 'stiucsib86@hotmail.com'
+          }
+        }
+      ];
+
+    }).error(function(data, status, headers, config) {
+      console.warn(data);
+    });
+  };
+
+  (function() {
+    $scope.GetHistory();
+  })();
+
 }

@@ -28,7 +28,7 @@ function SearchCtrl($scope, $rootScope, $filter, $http, $location, $log, $route,
   };
 
   /*
-   * Google Maps 
+   * Google Maps
    */
 
   google.maps.visualRefresh = true;
@@ -83,7 +83,7 @@ function SearchCtrl($scope, $rootScope, $filter, $http, $location, $log, $route,
   };
 
   $scope.getUserCenterMap = function() {
-    if ($scope.geolocationAvailable) {
+    if ($scope.locationAvailable) {
       navigator.geolocation.getCurrentPosition(function(position) {
         $scope.gmaps.center = {
           latitude: position.coords.latitude,
@@ -214,7 +214,7 @@ function SearchCtrl($scope, $rootScope, $filter, $http, $location, $log, $route,
   };
 
   /*
-   * Initializations 
+   * Initializations
    */
 
   (function() {
@@ -225,7 +225,7 @@ function SearchCtrl($scope, $rootScope, $filter, $http, $location, $log, $route,
   })();
 
   /*
-   * Watch Events 
+   * Watch Events
    */
 
   $scope.$watch('maid_list._pagination.current_page', function() {
@@ -273,19 +273,19 @@ function SearchCtrl($scope, $rootScope, $filter, $http, $location, $log, $route,
 }
 
 function footerCtrl($cookies, $scope, $rootScope) {
-  
+
   $scope.$watch('global_currency', function(newValue) {
     if (newValue) {
       $cookies.global_currency = newValue;
       console.log('Currency changed to: ', $cookies.global_currency);
     }
   });
-  
+
   $rootScope.global_currency = $cookies.global_currency;
   if (!$rootScope.global_currency) {
     $rootScope.global_currency = 'USD';
   }
-  
+
   $rootScope.const.locale_list = [{
       value: 'en_US',
       label: 'English'
@@ -296,17 +296,17 @@ function footerCtrl($cookies, $scope, $rootScope) {
       value: 'ms-MY',
       label: 'Bahasa Melayu'
   }];
-  
+
   $scope.$watch('global_locale', function(newValue) {
     if (newValue) {
       $cookies.global_locale = newValue;
       console.log('Locale changed to: ', $cookies.global_locale);
     }
   });
-  
+
   $rootScope.global_locale = $cookies.global_locale;
   if (!$rootScope.global_locale) {
     $rootScope.global_locale = 'en_US';
   }
-  
+
 }

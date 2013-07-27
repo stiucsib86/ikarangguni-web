@@ -14,11 +14,11 @@ function UserProfileCtrl($scope, $rootScope, $filter, $http, $location, $log, $r
         user_id: $routeParams.user_id
       }
     }).success(function(data, status) {
-      $scope.user_profile = data.data;
-      $scope.user_profile._loading = false;
+      $scope.user_profile = data;
+      //$scope.user_profile._loading = false;
     }).error(function(data, status, headers, config) {
-      $scope.user_profile._loading = false;
-      $scope.user_profile._error = true;
+      //$scope.user_profile._loading = false;
+      //$scope.user_profile._error = true;
     });
   };
 

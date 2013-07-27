@@ -17,8 +17,8 @@
           <div>
             <h5>Phone Number</h5>
             <h6>
-              <span ng-show="user_profile.verifications.phone_number">Verified</span>
-              <span ng-hide="user_profile.verifications.phone_number"><i>Pending</i></span>
+              <span ng-show="user_profile.phone">Verified</span>
+              <span ng-hide="user_profile.phone"><i>Pending</i></span>
             </h6>
           </div>
         </li>
@@ -29,8 +29,8 @@
           <div>
             <h5>Email Address</h5>
             <h6>
-              <span ng-show="user_profile.verifications.phone_number">Verified</span>
-              <span ng-hide="user_profile.verifications.phone_number"><i>Pending</i></span>
+              <span ng-show="user_profile.email">{{user_profile.email}} (Verified)</span>
+              <span ng-hide="user_profile.email"><i>Pending</i></span>
             </h6>
           </div>
         </li>

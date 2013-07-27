@@ -2,12 +2,12 @@
 |   HTML
 | ------------------------------------------------------------------------------
 */
-html { 
-  height: 100%; 
+html {
+  height: 100%;
 }
-body { 
-  height: 100%; 
-  margin: 0; 
+body {
+  height: 100%;
+  margin: 0;
   padding: 0;
 }
 .container-page {
@@ -43,7 +43,7 @@ body {
 }
 .footer {
   font-size: 90%;
-  padding: 50px 0;
+  padding: 10px 0;
 }
 
 /* -----------------------------------------------------------------------------
@@ -173,7 +173,7 @@ body {
   text-align: center;
   font-style: normal;
   color: #9a9a9a;
-  background: url(/images/homepage/login-sprite.png) center 19px no-repeat;
+  background: url(../images/homepage/login-sprite.png) center 19px no-repeat;
 }
 
 .login-form-container .input-background {

@@ -1,38 +1,27 @@
-<ul class="dashboard-sidebar nav nav-tabs nav-stacked" link-spy>
+<div ng-controller="UserProfileCtrl">
+
+<ul ng-show="user_profile.user_type==1" class="dashboard-sidebar nav nav-tabs nav-stacked" link-spy>
   <li>
-    <a href="#/dashboard/user/notifications"><i class="icon-chevron-right"></i> Notifications</a>
+    <a href="#/dashboard/notifications"><i class="icon-chevron-right"></i> My Notifications</a>
   </li>
   <li>
-    <a href="#/dashboard/user/settings"><i class="icon-chevron-right"></i> Settings</a>
+    <a href="#/dashboard/settings"><i class="icon-chevron-right"></i> Karung Guni Settings</a>
   </li>
 </ul>
 
-<ul class="dashboard-sidebar nav nav-tabs nav-stacked" link-spy>
+<ul ng-show="user_profile.user_type==1" class="dashboard-sidebar nav nav-tabs nav-stacked" link-spy>
   <li>
-    <a href="#/dashboard/user/profile"><i class="icon-chevron-right"></i> Profile</a>
+    <a href="#/recycle"><i class="icon-chevron-right"></i> Notify Karung Guni</a>
   </li>
   <li>
-    <a href="#/dashboard/user/media"><i class="icon-chevron-right"></i> Photos & Videos</a>
-  </li>
-  <li>
-    <a href="#/dashboard/user/verifications"><i class="icon-chevron-right"></i> Verifications</a>
-  </li>
-  <li>
-    <a href="#/dashboard/user/payouts"><i class="icon-chevron-right"></i> Payouts</a>
+    <a href="#/recycle/history"><i class="icon-chevron-right"></i> Collections &amp; Payouts History</a>
   </li>
   <li>
     <a href="#/dashboard/user/reviews"><i class="icon-chevron-right"></i> Reviews</a>
   </li>
+  <li>
+    <a href="#/dashboard/user/settings"><i class="icon-chevron-right"></i> User Settings</a>
+  </li>
 </ul>
 
-<ul class="dashboard-sidebar nav nav-tabs nav-stacked" link-spy>
-  <li>
-    <a href="#/dashboard/maid/contacts"><i class="icon-chevron-right"></i> Contacts</a>
-  </li>
-  <li>
-    <a href="#/dashboard/maid/calendar"><i class="icon-chevron-right"></i> Calendar & Location</a>
-  </li>
-  <li>
-    <a href="#/dashboard/maid/advanced"><i class="icon-chevron-right"></i> Advanced</a>
-  </li>
-</ul>
+</div>

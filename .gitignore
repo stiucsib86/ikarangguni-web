@@ -1,5 +1,7 @@
 node_modules
-dist
+/dist
 .tmp
 .sass-cache
 /nbproject/private/
+
+!app/components/*

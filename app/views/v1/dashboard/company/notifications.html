@@ -5,7 +5,7 @@
 
     <div class="row-fluid">
       <div class="span3">
-        <div ng-include="'/views/v1/dashboard/includes/sidebar-company.html'"></div>
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
       </div>
       <div class="span9">
 
@@ -15,7 +15,31 @@
           </div>
           <div class="middle">
 
-            <div class="no-result">
+            <div class="row-fluid">
+
+              <div ng-hide="notifications.length < 1">
+                <table class="table table-hover">
+                  <tbody>
+                    <tr ng-repeat="n in notifications">
+                      <td style="width: 200px;">
+                        <img ng-src="{{n.photo}}" style="max-width: 200px;" />
+                      </td>
+                      <td>
+                        <div>{{n.sender.name}}</div>
+                        <div>{{n.sender.email}}</div>
+                      </td>
+                      <td>
+                        <a href="#/dashboard/company/notifications/{{n.notification_id}}" class="btn btn-large btn-primary" style="margin: auto;">View</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+
+            <div ng-show="notifications.length < 1" class="no-result">
               No message in inbox.
             </div>
 

@@ -102,14 +102,25 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
    * Facebook Initializations
    */
   if (typeof Facebook !== 'undefined') {
-    Facebook.init({
-      appId: '497232760353519', // App ID
-      channelUrl: '/channel.html', // Channel File
-      status: true, // check login status
-      cookie: true, // enable cookies to allow the server to access the session
-      xfbml: true, // parse XFBML
-      permissions: 'read_stream, publish_stream, email'
-    });
+    if ((location.href.indexOf('localhost')) === -1) {
+      Facebook.init({
+        appId: '155208588003403', // App ID
+        channelUrl: '/channel.html', // Channel File
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true, // parse XFBML
+        permissions: 'read_stream, publish_stream, email'
+      });
+    } else {
+      Facebook.init({
+        appId: '497232760353519', // App ID
+        channelUrl: '/channel.html', // Channel File
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true, // parse XFBML
+        permissions: 'read_stream, publish_stream, email'
+      });
+    }
   }
 
   $scope.fb_login = function() {
@@ -193,7 +204,10 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
 
   // Global Functions
   $rootScope.fn = {
-    md5: md5
+    md5: md5,
+    getGravatarUrl: function(email) {
+      return '//www.gravatar.com/avatar/' + md5(email);
+    }
   };
 
   /*
