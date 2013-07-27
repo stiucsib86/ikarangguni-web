@@ -1,0 +1,42 @@
+<div class="statistics well" style="">
+  <ul class="unstyled responsiveness-list clearfix">
+    <li class="responsiveness-list-item response_rate">
+      <div>
+        <i class="icon icon-star mirror"></i>
+      </div>
+      <div>
+        <h3>{{maid_profile.statistics.rating || 0}} / 10</h3>
+        <h6>Average Rating</h6>
+      </div>
+    </li>
+    <li class="responsiveness-list-item response_rate">
+      <div>
+        <i class="icon icon-share-alt mirror"></i>
+      </div>
+      <div>
+        <h3>{{maid_profile.statistics.responsiveness.response_rate || '-'}}</h3>
+        <h6>Response Rate</h6>
+      </div>
+    </li>
+    <li class="responsiveness-list-item response_time">
+      <div>
+        <i class="icon icon-time"></i>
+      </div>
+      <div>
+        <h3>{{maid_profile.statistics.responsiveness.response_time || '-'}}</h3>
+        <h6>Response Time</h6>
+      </div>
+    </li>
+    <li class="responsiveness-list-item response_updatedness">
+      <div>
+        <i class="icon icon-calendar"></i>
+      </div>
+      <div>
+        <h3>{{maid_profile.statistics.responsiveness.response_updatedness || '-' | timeAgo}}</h3>
+        <h6>Calendar Updated</h6>
+
+        <span class="testing" title="2013-06-23 22:56:01"></span>
+      </div>
+    </li>
+  </ul>
+</div>

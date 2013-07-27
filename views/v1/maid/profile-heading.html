@@ -1,0 +1,64 @@
+<div class="accordion-group space2">
+  <div class="accordion-heading dark">
+    <div class="accordion-toggle">
+      <h4>Hey, I'm <span class="verification_user_name" ng-bind-html-unsafe="maid_profile.name.display_name"></span>!</h4>
+    </div>
+  </div>
+
+  <div class="accordion-inner panel-padding">
+
+    <div class="body panel-padding">
+      <div ng-bind-html-unsafe="maid_profile.bio"></div>
+    </div>
+
+    <div class="flag-controls">
+
+      <form accept-charset="UTF-8" action="/user_flags" class="new_user_flag" id="new_user_flag" method="post">
+        <div class="btn-group pull-right">  
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-flag"></i>
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#" class="" data-reason-id="Inappropriate/offensive content">Inappropriate/offensive content</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="Criminal offender">Criminal offender</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="This isn't a real person">This isn't a real person</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="Spam account">Spam account</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="Website in user name">Website in user name</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="E-mail in user name">E-mail in user name</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="Phone number in user name">Phone number in user name</a>
+            </li>
+            <li>
+              <a href="#" class="" data-reason-id="Name is very long">Name is very long</a>
+            </li>
+            <li class="divider"></li>
+            <li class="other">
+              <a href="#" class="" data-reason-id="Other">
+                Other <br />
+                <input name="user_flag[other_note]" placeholder="Enter a reason" type="text">
+              </a>
+            </li>
+          </ul>
+
+          <input id="user_flag_flaggable_type" name="user_flag[flaggable_type]" type="hidden" value="user">
+          <input id="user_flag_flaggable_id" name="user_flag[flaggable_id]" type="hidden" value="2676602">
+          <input id="user_flag_name" name="user_flag[name]" type="hidden">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

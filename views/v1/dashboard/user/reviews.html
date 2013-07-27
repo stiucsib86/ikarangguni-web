@@ -1,0 +1,44 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <h2><i class="icon-question-sign"></i> Reviews</h2>
+          </div>
+          <div class="middle">
+
+            <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a href="#home" data-toggle="tab">Reviews About You</a></li>
+              <li><a href="#profile" data-toggle="tab">Reviews By You</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+              <div class="tab-pane active" id="home">
+                <div ng-include="'/views/v1/dashboard/user/reviews-about-you.html'"></div>
+              </div>
+
+              <div class="tab-pane" id="profile">
+                <div ng-include="'/views/v1/dashboard/user/reviews-by-you.html'"></div>
+              </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

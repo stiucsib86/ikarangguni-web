@@ -1,0 +1,57 @@
+<div id="calendarEventModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>{{calendarEventModal.title || 'Create New' }} Event</h3>
+  </div>
+  <div class="modal-body">
+
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputCalendarStart">Start Date</label>
+        <div class="controls">
+          <input ng-model="calendar_event.start" type="text" id="inputCalendarStart" data-date-format="dd/mm/yyyy" bs-datepicker />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputCalendarEnd">End Date</label>
+        <div class="controls">
+          <input ng-model="calendar_event.end" type="text" id="inputCalendarEnd" data-date-format="dd/mm/yyyy" bs-datepicker />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputRepeatDays">Repeats:</label>
+        <div class="controls">
+          <label class="checkbox inline">
+            <input type="checkbox" ng-model="calendar_event.recurrence.weekly" id="inputRepeatWeekly" value="weekly"> Weekly
+          </label>
+        </div>
+      </div><div class="control-group">
+        <label class="control-label" for="inputRepeatDays">Availability</label>
+        <div class="controls">
+          <select ng-model="calendar_event.availability" ng-options="a.value as a.label for a in const.availabilities"></select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputRepeatDays">Timeslots</label>
+        <div class="controls">
+          <div ng-repeat="t in calendar_event.timeslots">
+            <div style="margin: 2px;">
+              <button ng-class="{ 'btn-primary':t.checked }" class="btn" ng-click="t.checked = !t.checked">{{t.value}}</button>
+              
+              <label class="checkbox" ng-hide="true">
+                <input type="checkbox" ng-model="t.checked" value="{{t.value}}" /> <span>{{t.value}}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>
+

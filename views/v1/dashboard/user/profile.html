@@ -1,0 +1,102 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <div class="pull-right" style="margin: 10px;">
+              <button class="btn btn-primary"><i class="icon-eye-open"></i> View Profile</button>
+            </div>
+            <h2><i class="icon-question-sign"></i> Required</h2>
+          </div>
+          <div class="middle">
+
+            <form class="form-horizontal">
+
+              <div class="control-group">
+                <label class="control-label" for="name_first">First Name</label>
+                <div class="controls">
+                  <input type="text" id="name_first" ng-model="profile.name.first" placeholder="John" required>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="name_middle">Middle Name</label>
+                <div class="controls">
+                  <input type="password" id="name_middle" ng-model="profile.name.middle" placeholder="">
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="name_last">Last Name</label>
+                <div class="controls">
+                  <input type="password" id="name_last" ng-model="profile.name.last" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="name_display">Display Name</label>
+                <div class="controls">
+                  <input type="password" id="name_display" ng-model="profile.name.display" placeholder="John, Doe" required>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="gender">Gender</label>
+                <div class="controls">
+                  <select ng-model="profile.gender" ng-options="g for g in const.gender" required></select>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="dob">Date of Birth</label>
+                <div class="controls">
+                  <div class="input-append">
+                    <input type="text" ng-model="profile.dob" data-date-format="dd/mm/yyyy" bs-datepicker>
+                    <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="bio">Bio</label>
+                <div class="controls">
+                  <textarea id="bio" ng-model="profile.bio" rows="6" class="input-xxlarge"></textarea>
+                  <div class="help-block">
+                    {{_app.title}} is built on relationships. Help other people get to know you.<br><br>
+                    Tell them about the things you like: What are 5 things you can’t live without? Share your favourite travel destinations, books, movies, shows, music, food.
+                    <br><br>Tell them what it’s like to have you as a guest or host: What’s your style of travelling? Of {{_app.title}} hosting?
+                    <br><br>Tell them about you: Do you have a life motto?
+                  </div>
+                </div>
+              </div>
+
+              <div class="control-group hidden hide">
+                <label class="control-label" for="interest">Interest</label>
+                <div class="controls">
+                  <textarea id="interest" ng-model="profile.interst" ></textarea>
+                </div>
+              </div>
+
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Profile Settings</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

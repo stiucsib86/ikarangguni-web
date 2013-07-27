@@ -1,0 +1,28 @@
+/* 
+    Document   : google-maps-extend
+    Created on : Jun 8, 2013, 3:10:59 AM
+    Author     : stiucsib86
+    Description:
+        Google Maps styles.
+*/
+
+div.pac-container { 
+  z-index: 99999 !important;
+  border-radius: 2px;
+  padding: 4px;
+}
+
+/** FIX for Bootstrap and Google Maps Info window styes problem **/          
+img[src*="gstatic.com/"], img[src*="googleapis.com/"] {                      
+  max-width: none;                                                           
+} 
+
+google-map,
+.google-map {
+  display: block;
+}
+.map-canvas-block {
+  width: 100%;
+  min-height: 500px;
+}
+

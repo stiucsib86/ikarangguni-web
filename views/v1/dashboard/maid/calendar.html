@@ -1,0 +1,134 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+    
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+
+          <div>
+            <div class="top">
+              <h2><i class="icon-question-sign"></i> Calendar</h2>
+            </div>
+            <div class="middle">
+
+              <div class="notice">
+                Reviews are written at the end of a reservation through {{_app.title}}. Reviews you've received will be visible both here and on your public profile.
+              </div>
+              <div class="clearfix">&nbsp;</div>
+
+              <div>
+                <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+              </div>
+              <div class="clearfix">&nbsp;</div>
+
+              <div ng-include="'/views/v1/dashboard/maid/calendar-event-modal.html'"></div>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="top">
+              <h2><i class="icon-question-sign"></i> Location</h2>
+            </div>
+            <div class="middle">
+
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="inputBasePrice">Location</label>
+                  <div class="controls">
+                    <input class="input-xlarge" id="inputBasePrice" type="text">
+                  </div>
+                </div>
+              </form>
+
+              @todo Gmaps here.
+
+              <div class="clearfix"></div>
+
+            </div>
+          </div>
+
+          <div>
+            <div class="top">
+              <h2><i class="icon-question-sign"></i> Standard Settings</h2>
+            </div>
+            <div class="middle">
+
+              <div class="notice">
+                Settings that applies everyday.
+              </div>
+              <div class="clearfix">&nbsp;</div>
+
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="inputBasePrice">Base Price</label>
+                  <div class="controls">
+                    <div class="input-prepend input-append">
+                      <span class="add-on">$</span>
+                      <input class="input-medium" id="inputBasePrice" type="text">
+                      <span class="add-on"> / hour</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="inputBasePrice">Currency</label>
+                  <div class="controls">
+                    <!--<select ng-model="cal_settings.currency" ng-options="c.value as c.icon_label for c in const.currencies" data-style="btn" bs-select></select>-->
+                    <select class="input-small" ng-model="cal_settings.currency" ng-options="c.value as c.value for c in const.currencies"></select>
+                  </div>
+                </div>
+
+                <div class="row-fluid list-item">
+                  <div class="span5 center">
+                    <h5>Service Name</h5>
+                  </div>
+                  <div class="span5 center">
+                    <h5>Hourly Rate</h5>
+                  </div>
+                  <div class="span2 center">
+                    <h5>Status</h5>
+                  </div>
+                </div>
+
+                <div class="row-fluid list-item" ng-repeat="(key, service) in const.services">
+                  <div class="span1 center">
+                    <h3><i class="icon-th-list"></i></h3>
+                  </div>
+                  <div class="span4">
+                    <h5>{{service.service_name}}</h5>
+                    <p>
+                      <small>{{service.service_description}}</small>
+                    </p>
+                  </div>
+                  <div class="span5 center">
+                    <div class="input-prepend input-append">
+                      <span class="add-on">$</span>
+                      <input class="input-medium" id="inputBasePrice" type="text">
+                      <span class="add-on"> / hour</span>
+                    </div>
+                  </div>
+                  <div class="span2 center">
+                    <div class="btn-group" bs-buttons-checkbox>
+                      <button type="button" class="btn" ng-model="service.enabled">Publish</button>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
