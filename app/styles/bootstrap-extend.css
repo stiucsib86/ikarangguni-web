@@ -37,8 +37,14 @@
   margin-bottom: 0.5em;
   border-bottom: 1px solid #eee;
 }
+@media only screen 
+and (max-device-width: 600px)
+{ 
+  .hero-unit {
+    padding: 5% !important;
+  }
+}
 .hero-unit {
-  padding: 6%;
   background: #fcfaf9;
   background: -moz-linear-gradient(top, #fcfaf9 15%, #eeedea 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#fcfaf9), color-stop(100%,#eeedea));
@@ -212,7 +218,7 @@ ul.responsiveness-list {
 /* Fixes for Bootstrap-Select */
 .bootstrap-select>.btn.input-small {
   width: 90px;
-  
+
 }
 .bootstrap-select.btn-group, .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: 0px !important;
