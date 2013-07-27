@@ -35,7 +35,19 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
     templateUrl: 'views/v1/maid/book.html',
     controller: 'MainCtrl'
   })
-  /*
+  .when('/clean',{
+	  templateUrl: 'views/v1/cleaning/cleaning.html',
+	  controller: 'CleaningCtrl'
+  })
+  .when('/clean/1',{
+	  templateUrl: 'views/v1/cleaning/snap-trash.html',
+	  controller: 'CleaningCtrl'
+  })
+  .when('/clean/2',{
+	  templateUrl: 'views/v1/cleaning/pick-karangguni.html',
+	  controller: 'CleaningCtrl'
+  })
+  /* 
    * Permanent pages
    */
   .when('/p/cancellation_poicies', {

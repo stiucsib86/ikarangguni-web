@@ -1,0 +1,47 @@
+<div class="container container-page">
+	<div class="hero-unit">
+        <div class="pull-left" style="margin-right: 20px;">
+			<img alt="{{_app.title}}" src="/images/logo-96.png">
+        </div>
+        <h2>KarangGuni~ing is Starting Now</h2>
+        <p>Step 1.</p>
+		<div class="container clearfix">
+
+		</div>
+		<div class="container clearfix">
+			<video id="video" width="150" height="150" autoplay></video>
+			<button id="snap">Snap Photo</button>
+			<canvas id="canvas" width="150" height="150"></canvas>
+		</div>
+		<div class="container clearfix">
+			<span>Pick a Pick-up Location:
+				<select class="selectpicker" data-style="btn-info" ng-model="location">
+					<option>YewTee</option>
+					<option>Clementi</option>
+				</select>
+			</span>
+			<h4>List of Karangguni:</h4>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Rating</th>
+						<th>Status</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tr>
+					<td>1</td>
+					<td>Ahcuan</td>
+					<td>4.9</td>
+					<td>Available</td>
+					<td><input type="radio"></td>
+				</tr>
+			</table>
+		</div>
+		<button class="btn-success btn-small pull-right" ng-click="StartSnapping()">Proceed</button>
+	</div>
+
+	<div class="clearfix">&nbsp;</div>
+</div>
