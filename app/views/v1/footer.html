@@ -8,7 +8,7 @@
 
           <select class="span5 lang-selector" ng-model="global_locale" ng-options="ll.value as ll.label for ll in const.locale_list" data-style="btn" bs-select></select>
           <select class="span5 curr-selector" ng-model="global_currency" ng-options="c.value as c.icon_label for c in const.currencies" data-style="btn" bs-select></select>
-            
+
         </div>
       </div>
 
@@ -48,7 +48,7 @@
           <li><a href="http://www.youtube.com/getmaidapp" target="_blank">YouTube</a></li>
         </ul>
         <div id="copyright">
-          &copy; Get Maid App.
+          &copy; {{_app.title}}.
         </div>
       </div>
     </div>

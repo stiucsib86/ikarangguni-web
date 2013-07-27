@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a class="brand" href="#">{{'Get Maid App'}}</a>
+        <a class="brand" href="#">{{_app.title}}</a>
 
         <div class="nav-collapse collapse">
 
@@ -33,9 +33,9 @@
           <!-- Authenticated -->
           <ul ng-show="auth.status" class="nav pull-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img class="nav-profile-img" ng-src="{{auth.user.gravatar}}" />
-                {{auth.user.email}} 
+                {{auth.user.email}}
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
