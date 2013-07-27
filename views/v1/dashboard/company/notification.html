@@ -9,20 +9,29 @@
       </div>
       <div class="span9">
 
-        <div class="dashboard-content">
-          <div class="top">
-            <h2><i class="icon-question-sign"></i> Notifications</h2>
+
+        <div nng-show="notification">
+          <div>
+            Photo
           </div>
-          <div class="middle">
 
-            <div class="no-result">
-              No message in inbox.
-            </div>
-
-            <div class="clearfix"></div>
-
+          <div>
+            Location
           </div>
+
+          <div>
+            <button class="btn btn-block">Accept & Notify User</button>
+          </div>
+
         </div>
+
+
+        <div ng-hide="notification" class="no-result">
+          Invalid Notification
+        </div>
+
+        <div class="clearfix"></div>
+
 
       </div>
     </div>
