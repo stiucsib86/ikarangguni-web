@@ -54,7 +54,7 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
     templateUrl: 'views/v1/p/cancellation-policies.html',
     controller: 'MainCtrl'
   })
-  /* 
+  /*
    * /dashboard/user
    */
   .when('/dashboard', {
@@ -93,7 +93,22 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
     templateUrl: 'views/v1/dashboard/user/notifications.html',
     controller: 'DashboardSettingsCtrl'
   })
-  /* 
+  /*
+   * /company/notification
+   */
+  .when('/dashboard/company/notifications', {
+    templateUrl: 'views/v1/dashboard/company/notifications.html',
+    controller: 'DashboardCompanyNotificationsCtrl'
+  })
+  .when('/dashboard/company/notifications/:notification_id', {
+    templateUrl: 'views/v1/dashboard/company/notification.html',
+    controller: 'DashboardCompanyNotificationCtrl'
+  })
+  .when('/dashboard/company/settings', {
+    templateUrl: 'views/v1/dashboard/company/settings.html',
+    controller: 'DashboardCompanySettingsCtrl'
+  })
+  /*
    * /dashboard/maid
    */
   .when('/dashboard/maid', {

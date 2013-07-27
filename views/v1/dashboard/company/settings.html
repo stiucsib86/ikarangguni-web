@@ -1,0 +1,140 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar-company.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+
+          <div class="dashboard-content-section">
+            <div class="top">
+              <h2><i class="icon-question-sign"></i> Mobile Settings</h2>
+            </div>
+            <div class="middle">
+
+              <form class="form">
+
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h5>Push Notifications</h5>
+                    <p>
+                      <small>Receive Push Notifications to your iPhone, iPod Touch or Android device.</small>
+                    </p>
+                  </div>
+                  <div class="span8">
+                    <p>Download the {{_app.title}} for <i class="icon-apple"></i> iPhone, or <i class="icon-android"></i> Android and receive advanced updates through Push Notifications instead of plain text messages.</p>
+                  </div>
+                </div>
+
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h5>Receive Notification when</h5>
+                    <p>
+                      <small>We promise not to spam, and you can disable these at any time.</small>
+                    </p>
+                  </div>
+                  <div class="span8">
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      I receive a message from another person on {{_app.title}}.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      My outstanding reservation request is accepted or declined.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Save Mobile Settings</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+          <div class="dashboard-content-section">
+            <div class="top">
+              <h2><i class="icon-question-sign"></i> Email Settings</h2>
+            </div>
+            <div class="middle">
+
+              <form class="form">
+
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h5>Emails from {{_app.title}}</h5>
+                    <p>
+                      <small>We promise not to spam, and you can disable these at any time.</small>
+                    </p>
+                  </div>
+                  <div class="span8">
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      Offers and deals on really cool destinations.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      Fun company news, as well as periodic emails.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      Tips and recommendations.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h5>Reminders</h5>
+                    <p>
+                      <small>Enabling these emails ensures the best possible experience for both hosts and guests.</small>
+                    </p>
+                  </div>
+                  <div class="span8">
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      I have an upcoming reservation.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      I have received a new review.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      I have received a new reference.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      I have received a new reference.
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      I have received a new reference request.
+                    </label>
+
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Save Email Settings</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
