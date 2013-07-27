@@ -1,17 +1,24 @@
 <div class="container container-page">
 	<div class="hero-unit">
         <div class="pull-left" style="margin-right: 20px;">
-			<img alt="{{_app.title}}" src="images/logo-96.png">
+			<img alt="{{_app.title}}" src="images/logo-recycle-32.png">
         </div>
         <h2>KarangGuni~ing is Starting Now</h2>
-
+		<h3>Item Information</h3>
+		<label>Item To Post:</label>
 		<div class="container clearfix">
-			<video id="video" width="150" height="150" autoplay></video>
-			<button id="snap">Snap Photo</button>
-			<canvas id="canvas" width="150" height="150"></canvas>
+			
+			<span>
+				<video id="video" width="150" height="150" autoplay></video>
+				<button id="snap">Snap Photo</button>
+				<canvas id="canvas" width="150" height="150"></canvas>
+				<label>Item Type:</label>
+				<input type="text" placeholder="newspaper" name="itemType" id="itemType">
+			</span>
 		</div>
 		<div class="container clearfix">
-			<span>Fill-in Your Pick-up Location:
+			<h3>Item Pick-Up</h3>
+			<span>
 				<label>Postal Code:</label>
 				<input type="text" placeholder="139951" name="postalCode" id="postalCode">
 				<label>Level - Unit No.:</label>
