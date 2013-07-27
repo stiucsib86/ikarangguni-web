@@ -9,7 +9,8 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a class="brand" href="#">{{_app.title}}</a>
+        <a class="brand" ng-hide="auth.status" href="#"><img alt="{{_app.title}}" src="images/logo-recycle-32.png">&nbsp;&nbsp;{{_app.title}}</a>
+        <a class="brand" ng-show="auth.status" href="#/dashboard"><img alt="{{_app.title}}" src="images/logo-recycle-32.png">&nbsp;&nbsp;{{_app.title}}</a>
 
         <div class="nav-collapse collapse">
 
@@ -30,7 +31,6 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a href="#/user/profile">Profile</a></li>
-                <li><a href="#/user/settings">Settings</a></li>
                 <li class="divider"></li>
                 <li><a href="#/logout">Logout</a></li>
               </ul>

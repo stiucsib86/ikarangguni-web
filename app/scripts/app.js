@@ -35,19 +35,23 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
     templateUrl: 'views/v1/maid/book.html',
     controller: 'MainCtrl'
   })
-  .when('/clean',{
+  .when('/recycle',{
 	  templateUrl: 'views/v1/cleaning/cleaning.html',
 	  controller: 'CleaningCtrl'
   })
-  .when('/clean/1',{
+  .when('/recycle/1',{
 	  templateUrl: 'views/v1/cleaning/snap-trash.html',
 	  controller: 'CleaningCtrl'
   })
-  .when('/clean/2',{
+  .when('/recycle/2',{
 	  templateUrl: 'views/v1/cleaning/pick-karangguni.html',
 	  controller: 'CleaningCtrl'
   })
-  /* 
+  .when('/recycle/history',{
+	  templateUrl: 'views/v1/cleaning/history.html',
+	  controller: 'HistoryCtrl'
+  })
+  /*
    * Permanent pages
    */
   .when('/p/cancellation_poicies', {
@@ -96,15 +100,15 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
   /*
    * /company/notification
    */
-  .when('/dashboard/company/notifications', {
+  .when('/dashboard/notifications', {
     templateUrl: 'views/v1/dashboard/company/notifications.html',
     controller: 'DashboardCompanyNotificationsCtrl'
   })
-  .when('/dashboard/company/notifications/:notification_id', {
+  .when('/dashboard/notifications/:notification_id', {
     templateUrl: 'views/v1/dashboard/company/notification.html',
     controller: 'DashboardCompanyNotificationCtrl'
   })
-  .when('/dashboard/company/settings', {
+  .when('/dashboard/settings', {
     templateUrl: 'views/v1/dashboard/company/settings.html',
     controller: 'DashboardCompanySettingsCtrl'
   })

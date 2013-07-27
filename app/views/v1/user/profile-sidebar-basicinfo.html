@@ -4,7 +4,7 @@
 
     <div class="profile_pic simple-slideshow">
       <a href="#/user/{{user_profile.user_id}}">
-        <img class="img-polaroid" ng-src="{{user_profile.profile_image.gravatar + '?s=280'}}" title="{{user_profile.name.display_name}}" style="box-sizing: border-box;" />
+        <img class="img-polaroid" ng-src="//graph.facebook.com/{{user_profile.username}}/picture" style="box-sizing: border-box;" />
       </a>
     </div>
 
@@ -22,7 +22,7 @@
         <span class="verification_user_name" ng-bind-html-unsafe="user_profile.name.display_name"></span>
       </h4>
       <h5 class="location" ng-bind-html-unsafe="user_profile.location.formatted_address"></h5>
-      <h6 class="join_year">Member since {{user_profile.created_on | date:'MMMM yyyy' }}</h6>
+      <h6 class="join_year">Last logined on: {{user_profile.updated_on | date:'MMMM yyyy' }}</h6>
     </div>
     <div class="hidden" id="contact_wrapper">
       <a href="/users/2676602/contact" class="btn large gray" id="user_contact_link"> Contact Me </a>
