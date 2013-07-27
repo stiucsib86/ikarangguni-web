@@ -66,8 +66,17 @@
 
                 <div class="clearfix">&nbsp;</div>
 
-                <div class="">
-                  <button type="submit" class="btn btn-large btn-primary btn-block">Accept & Notify User</button>
+                <div ng-show="notification.status==0">
+                  <h4>Awaiting Collection</h4>
+                </div>
+                <div ng-show="notification.status==1">
+                  <h4>Item Collected</h4>
+                  <div class="control-group">
+                   <label class="control-label" for="KarungGuni">Amount Issued</label>
+                   <div class="controls">
+                     <h4 style="margin:5px 0; padding:0;"><span class="add-on">S$</span>&nbsp;{{notification.issued_amount}}</h4>
+                   </div>
+                  </div>
                 </div>
 
               </form>

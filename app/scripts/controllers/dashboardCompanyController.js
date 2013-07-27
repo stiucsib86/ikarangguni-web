@@ -22,6 +22,47 @@ function DashboardCompanyNotificationCtrl($http, $location, $rootScope, $scope, 
     });
   };
 
+  $scope.UpdateStatusNotification = function() {
+    $http({
+      method: 'POST',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'notification/update/',
+      params: {
+        //callback: 'JSON_CALLBACK'
+        id: $routeParams.notification_id,
+        status: 1
+      }
+    }).success(function(data, status, headers, config) {
+
+      //$scope.notification = data.data;
+      location.reload();
+
+    }).error(function(data, status, headers, config) {
+      console.warn(data);
+    });
+  };
+
+ $scope.UpdatePayoutNotification = function() {
+    $http({
+      method: 'POST',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'notification/update/',
+      params: {
+        //callback: 'JSON_CALLBACK'
+        id: $routeParams.notification_id,
+        status: 1,
+        issued_amount: document.getElementById('issued_amount').value
+      }
+    }).success(function(data, status, headers, config) {
+
+      //$scope.notification = data.data;
+      location.reload();
+
+    }).error(function(data, status, headers, config) {
+      console.warn(data);
+    });
+  };
+
   $scope.initializeGmaps = function() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(1.3223472, 103.75788149999994);
