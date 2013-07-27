@@ -191,33 +191,6 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
     }, 1000);
   };
 
-
-  $scope.get_search_filters = function() {
-    $http({
-      method: 'JSONP',
-      url: $rootScope._app.url.api + 'search/filters/',
-      params: {
-        callback: 'JSON_CALLBACK'
-      }
-    }).success(function(data, status, headers, config) {
-      jQuery.extend(true, $rootScope, {
-        _page: {
-          search_filters: {
-            services: data.services,
-            base_rate: {
-              values: [0, 50]
-            }
-          }
-        }
-      });
-      jQuery.extend(true, $rootScope.const, {
-        services: data.services
-      });
-
-      // End of angular.extend
-    });
-  };
-
   // Global Functions
   $rootScope.fn = {
     md5: md5
@@ -239,7 +212,6 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
      *  Initializations
      * -------------------------------------------------------------------------
      */
-    $scope.get_search_filters();
   })();
 
 }

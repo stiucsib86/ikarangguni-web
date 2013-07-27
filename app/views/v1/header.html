@@ -13,16 +13,6 @@
 
         <div class="nav-collapse collapse">
 
-          <ul class="nav">
-            <li>&nbsp;</li>
-            <li ng-class="{'active': -1 != $location.path().indexOf('/search') }">
-              <form ng-submit="header_search_form_submit(header.search_keywords);" class="navbar-search search-icon-overlay pull-left">
-                <input google-place ng-model-onblur ng-model="header.search_keywords" placeholder="Type to search for places, and maids." class="search-query input-xxlarge" type="text" />
-                <i class="icon-search search-icon"></i>
-              </form>
-            </li>
-          </ul>
-
           <!-- Not Authenticated -->
           <ul ng-hide="auth.status" class="nav pull-right">
             <li ng-class="{'active': '/login' == $location.path()}">
