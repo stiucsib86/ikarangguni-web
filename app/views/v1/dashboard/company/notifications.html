@@ -16,20 +16,27 @@
           <div class="middle">
 
             <div class="row-fluid">
-
               <div ng-hide="notifications.length < 1">
-                <table class="table table-hover">
+                <table class="table table-hover" width="100%">
                   <tbody>
                     <tr ng-repeat="n in notifications">
                       <td style="width: 200px;">
-                        <img ng-src="{{n.photo}}" style="max-width: 200px;" />
+                        <img ng-src="{{n.photo || 'http://tackthiscdn0.blob.core.windows.net/images/placeholders/products/thumb_portrait.png'}}" style="min-width:175px; max-width: 180px;" />
                       </td>
                       <td>
-                        <div>{{n.sender.name}}</div>
-                        <div>{{n.sender.email}}</div>
+                        <h3 style="margin:0 0 5px 0; padding:0;">{{n.item_type || 'Unknown Item'}}</h3>
+                        <div style="margin-bottom:20px;">by <span><img class="img-polaroid" ng-src="//graph.facebook.com/{{n.sender.username}}/picture" style="max-height:30px;" /></span>
+                          &nbsp;<a href="mailto:{{n.sender.email}}">{{n.sender.display_name || 'Anonymous'}}</a></div>
+                        <div ng-show="n.status==0" style="color:#f00;">Awaiting Collection</div>
+                        <div ng-show="n.status==1">
+                            <h4>Item collected</h4>
+                            <p>by <span><img class="img-polaroid" ng-src="//graph.facebook.com/{{n.receiver.username}}/picture" style="max-height:30px;" /></span>
+                              &nbsp;<a href="mailto:{{n.receiver.email}}">{{n.receiver.display_name}}</a></p>
+                            <p>Amount Paid: <strong>S$ {{n.issued_amount}}</strong></p>
+                        </div>
                       </td>
-                      <td>
-                        <a href="#/dashboard/company/notifications/{{n.notification_id}}" class="btn btn-large btn-primary" style="margin: auto;">View</a>
+                      <td style="width: 80px;">
+                        <a href="#/dashboard/notifications/{{n.id}}" class="btn btn-large btn-primary" style="margin: auto;">View</a>
                       </td>
                     </tr>
                   </tbody>

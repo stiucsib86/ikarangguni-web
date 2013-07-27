@@ -13,6 +13,7 @@ function AuthCtrl($scope, $rootScope, $route, $routeParams, $http, $location) {
       }
     }).success(function(data, status, headers, config) {
       $rootScope.auth = data;
+      console.log('$rootScope.auth', $rootScope.auth);
     }).error(function(data, status, headers, config) {
       console.warn(data);
     });

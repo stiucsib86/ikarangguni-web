@@ -21,7 +21,6 @@ function SearchCtrl($scope, $rootScope, $filter, $http, $location, $log, $route,
         search_filter: $rootScope._search_filter
       }
     }).success(function(data, status, headers, config) {
-      $rootScope.auth = data;
     }).error(function(data, status, headers, config) {
       console.warn(status);
     });
@@ -289,13 +288,13 @@ function footerCtrl($cookies, $scope, $rootScope) {
   $rootScope.const.locale_list = [{
       value: 'en_US',
       label: 'English'
-  },{
+    }, {
       value: 'zh-CN',
       label: 'Chinese'
-  },{
+    }, {
       value: 'ms-MY',
       label: 'Bahasa Melayu'
-  }];
+    }];
 
   $scope.$watch('global_locale', function(newValue) {
     if (newValue) {
