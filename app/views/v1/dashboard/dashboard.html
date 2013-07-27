@@ -11,8 +11,13 @@
 
         <div class="dashboard-content">
 
-          <div class="no-result">
-            Select a menu.
+          <div class="no-result" ng-show="user_profile.user_type==0">
+            <h3>Getting Started</h3>
+            <img src="images/instructions-user.jpg">
+          </div>
+          <div class="no-result" ng-show="user_profile.user_type==1">
+            <h3>Getting Started</h3>
+            <img src="images/instructions-kg.jpg">
           </div>
 
         </div>
