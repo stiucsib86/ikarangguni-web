@@ -13,6 +13,36 @@
 
           <div class="dashboard-content-section">
             <div class="top">
+              <h2><i class="icon-question-sign"></i> Location Settings</h2>
+            </div>
+            <div class="middle">
+              <div class="form form-horizontal">
+
+                <div class="control-group" ng-repeat="l in settings.locations">
+                  <label class="control-label" for="inputPostal">Location (Postal)</label>
+                  <div class="controls">
+                    <input type="text" name="" placeholder="139951" ng-model="l.postal">
+                    <a class="btn btn-danger" ng-click="DeleteSettingsLocation()"><i class="icon-trash"></i>&nbsp; Delete</a>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <div class="controls">
+                    <a class="btn btn-success" ng-click="AddSettingsLocation()"><i class="icon-plus"></i>&nbsp; Add More</a>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Add More</button>
+                  <button type="button" class="btn">Cancel</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-content-section">
+            <div class="top">
               <h2><i class="icon-question-sign"></i> Mobile Settings</h2>
             </div>
             <div class="middle">
@@ -39,11 +69,11 @@
                     </p>
                   </div>
                   <div class="span8">
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       I receive a message from another person on {{_app.title}}.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       My outstanding reservation request is accepted or declined.
                     </label>
@@ -75,15 +105,15 @@
                     </p>
                   </div>
                   <div class="span8">
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       Offers and deals on really cool destinations.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       Fun company news, as well as periodic emails.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       Tips and recommendations.
                     </label>
@@ -98,23 +128,23 @@
                     </p>
                   </div>
                   <div class="span8">
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       I have an upcoming reservation.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       I have received a new review.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       I have received a new reference.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       I have received a new reference.
                     </label>
-                    <label class="checkbox">
+                    <label class="checkbox clearfix">
                       <input type="checkbox" value="">
                       I have received a new reference request.
                     </label>

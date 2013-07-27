@@ -24,7 +24,7 @@
           <ul ng-show="auth.status" class="nav pull-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img class="nav-profile-img" ng-src="{{auth.user.gravatar}}" />
+                <img class="nav-profile-img" ng-src="{{ md5(auth.user.email); }}" />
                 {{auth.user.email}}
                 <b class="caret"></b>
               </a>

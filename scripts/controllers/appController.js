@@ -193,7 +193,10 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
 
   // Global Functions
   $rootScope.fn = {
-    md5: md5
+    md5: md5,
+    getGravatarUrl: function(email) {
+      return '//www.gravatar.com/avatar/' + md5(email);
+    }
   };
 
   /*
