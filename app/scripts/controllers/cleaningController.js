@@ -5,6 +5,7 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 	$scope.gmaps = {};
 	$scope.geocoder = new google.maps.Geocoder();
 	$scope.showKGTable = false;
+	$scope.photoTaken = false;
 	/*
 	 * Google Maps 
 	 */
@@ -54,11 +55,11 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 			$scope.karungguniList = data;
 			$scope.showKGTable = true;
 		}).error(function(data) {
-
 		});
 	};
 
 	$scope.StartSnapping = function() {
+		$scope.photoTaken = false;
 		var localStream;
 		// Grab elements, create settings, etc.
 		var canvas = document.getElementById("canvas"),
@@ -90,13 +91,9 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 			video.pause();
 			localStream.stop();
 			video.src = "";
-			$('#video').css("display", "none");
-			$('#snap').css("display", "none");
+			$scope.photoTaken = true;
+			$scope.$apply();
 		});
-	};
-
-	$scope.SelectKarangguni = function() {
-		$location.url('/clean/2');
 	};
 
 	$scope.getAddressGeocode = function(postalCode) {
@@ -114,7 +111,7 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 				}
 			});
 		} else {
-			$scope.getUserCenterMap();
+			alert("Please Input a postal Code");
 		}
 	};
 
@@ -156,6 +153,7 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 		var userPostalCode = $('#postalCode').val();
 		$scope.getAddressGeocode(userPostalCode);
 	};
+
 
 	$scope.StartSnapping();
 }

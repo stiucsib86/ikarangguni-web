@@ -1,50 +1,98 @@
 <div class="container container-page">
+
+	<div bread-crumb></div>
+
 	<div class="hero-unit">
+
         <div class="pull-left" style="margin-right: 20px;">
-			<img alt="{{_app.title}}" src="images/logo-recycle-32.png">
+			<img class="img-polaroid" alt="{{_app.title}}" src="images/logo-recycle-32.png">
         </div>
-        <h2>KarangGuni~ing is Starting Now</h2>
-		<h3>Item Information</h3>
-		<label>Item To Post:</label>
-		<div class="container clearfix">
-			
-			<span>
-				<video id="video" width="150" height="150" autoplay></video>
-				<button id="snap">Snap Photo</button>
-				<canvas id="canvas" width="150" height="150"></canvas>
-				<label>Item Type:</label>
-				<input type="text" placeholder="newspaper" name="itemType" id="itemType">
-			</span>
-		</div>
-		<div class="container clearfix">
-			<h3>Item Pick-Up</h3>
-			<span>
-				<label>Postal Code:</label>
-				<input type="text" placeholder="139951" name="postalCode" id="postalCode">
-				<label>Level - Unit No.:</label>
-				<input type="text" placeholder="07-03" name="unitNo" id="unitNo">
-			</span>
-		</div>
-		<button ng-click="filterKG()">View Karungguni</button>
-		<div class="container clearfix" ng-show="showKGTable">
-			<h4>List of Karangguni:</h4>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Name</th>
-						<th></th>
+
+		<h2>KarangGuni~ing is Starting Now</h2>
+
+		<div class="clearfix">&nbsp;</div>
+
+		<div class="form-horizontal">
+
+			<legend>
+				<h3>Step 1: Take a photo</h3>
+			</legend>
+
+			<div class="control-group">
+				<label class="control-label" for="inputEmail">Item To Post</label>
+				<div class="controls">
+					<div class="container clearfix">
+						<video class="img-polaroid" id="video" width="150" height="150" autoplay ng-hide="photoTaken"></video>
+						<canvas class="img-polaroid" id="canvas" width="150" height="150" ng-show="photoTaken"></canvas>
+					</div>
+					<div>
+						<button class="btn btn-primary" id="resnap" ng-show="photoTaken" ng-click="StartSnapping()" >Retake Photo</button>
+						<button class="btn btn-primary"id="snap" ng-hide="photoTaken">Snap Photo</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix">&nbsp;</div>
+
+			<legend>
+				<h3>Step 2: Item Information</h3>
+			</legend>
+
+			<div class="control-group">
+				<label class="control-label" for="inputEmail">Item Type</label>
+				<div class="controls">
+					<input type="text" placeholder="newspaper" name="itemType" id="itemType">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<div class="controls">
+					<div>
+						<label>Postal Code:</label>
+						<input type="text" placeholder="139951" name="postalCode" id="postalCode">
+						<label>Level - Unit No.:</label>
+						<input type="text" placeholder="07-03" name="unitNo" id="unitNo">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="clearfix">&nbsp;</div>
+
+			<legend>
+				<h3>Step 3: Notify Karungguni</h3>
+			</legend>
+
+			<button class="btn btn-primary" ng-click="filterKG()">View Karungguni</button>
+
+			<div class="clearfix">&nbsp;</div>
+
+			<div ng-show="showKGTable && karungguniList.length > 0">
+				<h5>Select a Karangguni:</h5>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tr ng-repeat ="karungguni in karungguniList">
+						<td>{{$index+1}}</td>
+						<td>{{karungguni.last_name}},{{karungguni.first_name}}</td>
+						<td><input type="radio" name="selectedKarungguni" id="selectedKarungguni" value={{karungguni.id}}></td>
 					</tr>
-				</thead>
-				<tr ng-repeat ="karungguni in karungguniList">
-					<td>{{$index+1}}</td>
-					<td>{{karungguni.last_name}},{{karungguni.first_name}}</td>
-					<td><input type="radio" name="selectedKarungguni" id="selectedKarungguni" value={{karungguni.id}}></td>
-				</tr>
-			</table>
+				</table>
+			</div>
+			
+			<div ng-show="showKGTable && karungguniList.length < 1">
+				<h5>Sorry, There is no Karang-guni located near your place</h5>
+			</div>
+
+			<div class="clearfix">&nbsp;</div>
+			<button class="btn-success btn-large pull-right" ng-click="SubmitItem()">Proceed</button>
+			<div class="clearfix">&nbsp;</div>
 		</div>
-		<button class="btn-success btn-small pull-right" ng-click="SubmitItem()">Proceed</button>
+
 	</div>
-</div>
-<div class="clearfix">&nbsp;</div>
 </div>
