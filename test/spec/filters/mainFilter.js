@@ -3,7 +3,7 @@
 describe('Filter: mainFilter', function () {
 
   // load the filter's module
-  beforeEach(module('getmaidappWebApp'));
+  beforeEach(module('ikarangguniWebApp'));
 
   // initialize a new instance of the filter before each test
   var mainFilter;

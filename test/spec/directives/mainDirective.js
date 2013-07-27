@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Directive: mainDirective', function () {
-  beforeEach(module('getmaidappWebApp'));
+  beforeEach(module('ikarangguniWebApp'));
 
   var element;
 

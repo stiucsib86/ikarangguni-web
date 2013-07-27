@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('getmaidappWebApp')
+angular.module('ikarangguniWebApp')
         .filter('mainFilter', function() {
   return function(input) {
     return 'mainFilter filter: ' + input;
