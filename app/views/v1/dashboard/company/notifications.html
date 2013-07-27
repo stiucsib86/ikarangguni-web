@@ -18,15 +18,22 @@
             <div class="row-fluid">
 
               <div>
-                <img src="" />
-              </div>
-
-              <div>
-                Location: dsfasdfasdf
-              </div>
-
-              <div>
-                User: sdfasdf
+                <table class="table table-hover">
+                  <tbody>
+                    <tr ng-repeat="n in notifications">
+                      <td style="width: 200px;">
+                        <img ng-src="{{n.photo}}" style="max-width: 200px;" />
+                      </td>
+                      <td>
+                        <div>{{n.sender.name}}</div>
+                        <div>{{n.sender.email}}</div>
+                      </td>
+                      <td>
+                        <a href="#/dashboard/company/notifications/{{n.notification_id}}" class="btn btn-large btn-primary" style="margin: auto;">View</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
             </div>
