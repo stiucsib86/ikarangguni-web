@@ -11,6 +11,9 @@
 
         <div class="dashboard-content">
           <div class="top">
+            <div class="pull-right form-search" style="margin:10px;">
+              <input class="input-large search-query" type="text" ng-model="filter" placeholder="Search..." />
+            </div>
             <h2><i class="icon-question-sign"></i> Notifications</h2>
           </div>
           <div class="middle">
@@ -19,7 +22,7 @@
               <div ng-hide="notifications.length < 1">
                 <table class="table table-hover" width="100%">
                   <tbody>
-                    <tr ng-repeat="n in notifications">
+                    <tr ng-repeat="n in notifications | filter:filter">
                       <td style="width: 200px;">
                         <img ng-src="{{n.photo || 'http://tackthiscdn0.blob.core.windows.net/images/placeholders/products/thumb_portrait.png'}}" style="min-width:175px; max-width: 180px;" />
                       </td>
