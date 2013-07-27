@@ -51,7 +51,8 @@ function DashboardCompanyNotificationCtrl($http, $location, $rootScope, $scope, 
         //callback: 'JSON_CALLBACK'
         id: $routeParams.notification_id,
         status: 1,
-        issued_amount: document.getElementById('issued_amount').value
+        issued_amount: document.getElementById('issued_amount').value,
+        remarks: document.getElementById('remarks').value
       }
     }).success(function(data, status, headers, config) {
 

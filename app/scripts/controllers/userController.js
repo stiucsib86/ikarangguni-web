@@ -30,3 +30,65 @@ function UserProfileCtrl($scope, $rootScope, $filter, $http, $location, $log, $r
     $scope.GetUserProfile();
   })();
 }
+
+function UserPayoutCtrl($scope, $rootScope, $filter, $http, $location, $log, $route, $routeParams, $timeout) {
+
+  $scope.user_payout = {};
+  $scope.user_payout._loading = true;
+
+  $scope.GetUserPayout = function() {
+    $http({
+      method: 'JSONP',
+      url: $rootScope._app.url.api + 'payout/',
+      params: {
+        callback: 'JSON_CALLBACK',
+        user_id: $routeParams.user_id
+      }
+    }).success(function(data, status) {
+      $scope.user_payout = data.data.balance;
+      //$scope.user_payout._loading = false;
+    }).error(function(data, status, headers, config) {
+      //$scope.user_payout._loading = false;
+      //$scope.user_payout._error = true;
+    });
+  };
+
+  /* ---------------------------------------------------------------------------
+   * Initialization
+   * ---------------------------------------------------------------------------
+   */
+  (function() {
+    $scope.GetUserPayout();
+  })();
+}
+
+function UserPayoutIssuedCtrl($scope, $rootScope, $filter, $http, $location, $log, $route, $routeParams, $timeout) {
+
+  $scope.user_payout = {};
+  $scope.user_payout._loading = true;
+
+  $scope.GetUserPayoutIssued = function() {
+    $http({
+      method: 'JSONP',
+      url: $rootScope._app.url.api + 'payout/issued/',
+      params: {
+        callback: 'JSON_CALLBACK',
+        user_id: $routeParams.user_id
+      }
+    }).success(function(data, status) {
+      $scope.user_payout_issued = data.data.balance;
+      //$scope.user_payout._loading = false;
+    }).error(function(data, status, headers, config) {
+      //$scope.user_payout._loading = false;
+      //$scope.user_payout._error = true;
+    });
+  };
+
+  /* ---------------------------------------------------------------------------
+   * Initialization
+   * ---------------------------------------------------------------------------
+   */
+  (function() {
+    $scope.GetUserPayoutIssued();
+  })();
+}
