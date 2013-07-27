@@ -12,7 +12,7 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
   jQuery.extend(true, $rootScope, {
     _app: {
       debug: true,
-      title: 'Get Maid App',
+      title: 'iKarangGuni',
       page: {
         title: ' | Get your place cleaned.'
       }
@@ -115,7 +115,7 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
     Facebook.login();
   };
 
-  /* 
+  /*
    * Constants
    */
   $rootScope.const = {
@@ -217,13 +217,13 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
     });
   };
 
-  // Global Functions 
+  // Global Functions
   $rootScope.fn = {
     md5: md5
   };
 
   /*
-   * Watch Events 
+   * Watch Events
    */
   $scope.$watch('header.search_keywords', function() {
     console.log('Searching for: ' + $rootScope.header.search_keywords);
