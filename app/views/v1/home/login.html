@@ -18,17 +18,22 @@
 
               <div>
                 <div class="sign-up">
-                  <a class="fb-connect button" ng-click="fb_login()">
+                  <a class="btn btn-primary btn-block btn-large" ng-click="fb_login()">
+                    <i class="icon-facebook"></i> Connect with Facebook
                     <div ng-show="login_form.fbc_btn._loading" class="spinner-btn-container">
                       <div spin-js="config" color="#FFF"></div>
                     </div>
                   </a>
+                  <div class="hide hidden">
+                    <div class="fb-connect button">
+                    </div>
+                  </div>
                 </div>
 
                 <em>or</em>
               </div>
 
-              <fieldset>
+              <fieldset class="hide hidden">
                 <span class="input-background">@</span>
                 <input class="input-block-level" type="text" id="inputEmail" placeholder="Email Address">
                 <span class="input-background"><i class="icon-lock"></i></span>
