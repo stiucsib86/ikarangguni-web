@@ -1,46 +1,54 @@
 <div class="header">
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
 
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 
-        <a class="brand" ng-hide="auth.status" href="#"><img alt="{{_app.title}}" src="images/logo-recycle-32.png">&nbsp;&nbsp;{{_app.title}}</a>
-        <a class="brand" ng-show="auth.status" href="#/dashboard"><img alt="{{_app.title}}" src="images/logo-recycle-32.png">&nbsp;&nbsp;{{_app.title}}</a>
+				<a class="brand" ng-hide="auth.status" href="#"><img alt="{{_app.title}}" src="images/logo-recycle-32.png">&nbsp;&nbsp;{{_app.title}}</a>
+				<a class="brand" ng-show="auth.status" href="#/dashboard"><img alt="{{_app.title}}" src="images/logo-recycle-32.png">&nbsp;&nbsp;{{_app.title}}</a>
 
-        <div class="nav-collapse collapse">
+				<div class="nav-collapse collapse" ng-show="auth.status">
+					<ul class="nav">
+						<li class="">
+							<a href="#/recycle">Start Posting</a>
+						</li>
+					</ul>
+				</div>
 
-          <!-- Not Authenticated -->
-          <ul ng-hide="auth.status" class="nav pull-right">
-            <li ng-class="{'active': '/login' == $location.path()}">
-              <a href="#login">Login</a>
-            </li>
-          </ul>
+				<div class="nav-collapse collapse">
 
-          <!-- Authenticated -->
-          <ul ng-show="auth.status" class="nav pull-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img class="nav-profile-img" ng-src="{{ md5(auth.user.email); }}" />
-                {{auth.user.email}}
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#/user/profile">Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="#/logout">Logout</a></li>
-              </ul>
-            </li>
+					<!-- Not Authenticated -->
+					<ul ng-hide="auth.status" class="nav pull-right">
+						<li ng-class="{'active': '/login' == $location.path()}">
+							<a href="#login">Login</a>
+						</li>
+					</ul>
 
-          </ul>
+					<!-- Authenticated -->
+					<ul ng-show="auth.status" class="nav pull-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img class="nav-profile-img" ng-src="{{ md5(auth.user.email); }}" />
+								{{auth.user.email}}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#/user/profile">Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="#/logout">Logout</a></li>
+							</ul>
+						</li>
 
-        </div>
-      </div>
-    </div>
-  </div>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="after-header hidden-phone"></div>

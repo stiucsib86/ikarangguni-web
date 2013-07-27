@@ -2,7 +2,12 @@
 
 	<div bread-crumb></div>
 
-	<div class="hero-unit">
+	<div class="row-fluid">
+		<div class="span3">
+			<div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+		</div>
+		
+		<div class="hero-unit span9">
 
         <div class="pull-left" style="margin-right: 20px;">
 			<img class="img-polaroid" alt="{{_app.title}}" src="images/logo-recycle-32.png">
@@ -84,7 +89,7 @@
 					</tr>
 				</table>
 			</div>
-			
+
 			<div ng-show="showKGTable && karungguniList.length < 1">
 				<h5>Sorry, There is no Karang-guni located near your place</h5>
 			</div>
@@ -95,4 +100,6 @@
 		</div>
 
 	</div>
+	</div>
+	
 </div>
