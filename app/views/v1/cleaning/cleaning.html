@@ -4,44 +4,40 @@
 			<img alt="{{_app.title}}" src="/images/logo-96.png">
         </div>
         <h2>KarangGuni~ing is Starting Now</h2>
-        <p>Step 1.</p>
-		<div class="container clearfix">
 
-		</div>
 		<div class="container clearfix">
 			<video id="video" width="150" height="150" autoplay></video>
 			<button id="snap">Snap Photo</button>
 			<canvas id="canvas" width="150" height="150"></canvas>
 		</div>
 		<div class="container clearfix">
-			<span>Pick a Pick-up Location:
-				<select class="selectpicker" data-style="btn-info" ng-model="location">
-					<option>YewTee</option>
-					<option>Clementi</option>
-				</select>
+			<span>Fill-in Your Pick-up Location:
+				<label>Postal Code:</label>
+				<input type="text" placeholder="139951" name="postalCode" id="postalCode">
+				<label>Level - Unit No.:</label>
+				<input type="text" placeholder="07-03" name="unitNo" id="unitNo">
 			</span>
+		</div>
+		<button ng-click="filterKG()">View Karungguni</button>
+		<div class="container clearfix" ng-show="showKGTable">
 			<h4>List of Karangguni:</h4>
 			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th>#</th>
 						<th>Name</th>
-						<th>Rating</th>
-						<th>Status</th>
 						<th></th>
 					</tr>
 				</thead>
-				<tr>
-					<td>1</td>
-					<td>Ahcuan</td>
-					<td>4.9</td>
-					<td>Available</td>
-					<td><input type="radio"></td>
+				<tr ng-repeat ="karungguni in karungguniList">
+					<td>{{$index+1}}</td>
+					<td>{{karungguni.last_name}},{{karungguni.first_name}}</td>
+					<td><input type="radio" name="selectedKarungguni" id="selectedKarungguni" value={{karungguni.id}}></td>
 				</tr>
 			</table>
 		</div>
-		<button class="btn-success btn-small pull-right" ng-click="StartSnapping()">Proceed</button>
+		<button class="btn-success btn-small pull-right" ng-click="SubmitItem()">Proceed</button>
 	</div>
-
-	<div class="clearfix">&nbsp;</div>
+</div>
+<div class="clearfix">&nbsp;</div>
 </div>

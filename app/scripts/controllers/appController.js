@@ -50,7 +50,7 @@ function AppCtrl($cookies, $scope, $rootScope, $route, $routeParams, $http, $loc
           }, {
             'country_name': 'Philippines'
           }, {
-            'country_name': 'Vietname'
+            'country_name': 'Vietnam'
           }, {
             'country_name': 'United States'
           }]
