@@ -198,7 +198,6 @@ angular.module('ikarangguniWebApp')
 
 			var $elm = $(element);
 			var $text = $elm.html();
-			alert($text);
 			var form_data = {
 				client_id: 'CnA2P59x2DyIpozn3QFMzmp8',
 					q: $text,
