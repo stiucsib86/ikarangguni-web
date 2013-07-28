@@ -2,6 +2,21 @@
 
 function AuthCtrl($scope, $rootScope, $route, $routeParams, $http, $location) {
 
+//  $http({
+//    method: 'GET',
+//    withCredentials: true,
+//    url: 'http://openapi.baidu.com/public/2.0/bmt/translate?client_id=CnA2P59x2DyIpozn3QFMzmp8',
+//    params: {
+//      q: 'today',
+//      from: 'auto',
+//      to: 'auto'
+//    }
+//  }).success(function(xhrResponse) {
+//    console.log('xhrResponse', xhrResponse);
+//
+//  });
+
+
   // Connect to backend for authentication
   $rootScope.get_auth_details = function() {
     $http({

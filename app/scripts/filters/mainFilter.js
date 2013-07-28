@@ -9,4 +9,8 @@ angular.module('ikarangguniWebApp')
   return function(date) {
     return jQuery.timeago(date);
   };
+}).filter("baidutranslate", function($http) {
+  return function(date) {
+    return 'nothing yet...';
+  };
 });

@@ -29,10 +29,10 @@
                           &nbsp;<a href="mailto:{{n.sender.email}}">{{n.sender.display_name || 'Anonymous'}}</a></div>
                         <div ng-show="n.status==0" style="color:#f00;">Awaiting Collection</div>
                         <div ng-show="n.status==1">
-                            <h4>Item collected</h4>
-                            <p>by <span><img class="img-polaroid" ng-src="//graph.facebook.com/{{n.receiver.username}}/picture" style="max-height:30px;" /></span>
-                              &nbsp;<a href="mailto:{{n.receiver.email}}">{{n.receiver.display_name}}</a></p>
-                            <p>Amount Paid: <strong>S$ {{n.issued_amount}}</strong></p>
+                          <h4>Item collected</h4>
+                          <p>by <span><img class="img-polaroid" ng-src="//graph.facebook.com/{{n.receiver.username}}/picture" style="max-height:30px;" /></span>
+                            &nbsp;<a href="mailto:{{n.receiver.email}}">{{n.receiver.display_name}}</a></p>
+                          <p>Amount Paid: <strong>S$ {{n.issued_amount}}</strong></p>
                         </div>
                       </td>
                       <td style="width: 80px;">
