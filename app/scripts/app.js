@@ -67,6 +67,10 @@ angular.module('ikarangguniWebApp', ['ngCookies', 'FacebookProvider', 'google-ma
     templateUrl: 'views/v1/p/cancellation-policies.html',
     controller: 'MainCtrl'
   })
+  .when('/p/face', {
+    templateUrl: 'views/v1/p/iframe.html',
+    controller: 'MainCtrl'
+  })
   /*
    * /dashboard/user
    */
