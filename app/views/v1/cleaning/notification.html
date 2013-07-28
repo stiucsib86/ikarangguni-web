@@ -1,0 +1,99 @@
+<div class="container container-page space2">
+  <div class="dashboard">
+
+    <div bread-crumb></div>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <div ng-include="'/views/v1/dashboard/includes/sidebar.html'"></div>
+      </div>
+      <div class="span9">
+
+        <div class="dashboard-content">
+          <div class="top">
+            <h2>{{notification.item_type}}</h2>
+          </div>
+          <div class="middle">
+
+            <div nng-show="notification">
+
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="inputEmail">Item Photo</label>
+                  <div class="controls">
+                    <img ng-src="{{notification.photo}}" style="min-width:200px; max-width: 300px;" />
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="">Location</label>
+                  <div class="controls">
+
+                    <div>
+                      <b>{{notification.unit_no}}, {{notification.postal_code}}</b>
+                    </div>
+
+                    <div>
+                      <div class="map-canvas-block" id="map-canvas"></div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="ContributingUser">Contributing User</label>
+                  <div class="controls">
+                    <div>
+                      <img class="img-polaroid" ng-src="//graph.facebook.com/{{notification.sender.username}}/picture" />
+                    </div>
+                    <div>
+                      <span><a href="mailto:{{notification.sender.email}}">{{notification.sender.display_name}}</a></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="KarungGuni">Karung Guni Assigned</label>
+                  <div class="controls">
+                    <div>
+                      <img class="img-polaroid" ng-src="//graph.facebook.com/{{notification.receiver.username}}/picture" />
+                    </div>
+                    <div>
+                      <span><a href="mailto:{{notification.receiver.email}}">{{notification.receiver.display_name}}</a></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="clearfix">&nbsp;</div>
+
+                <div ng-show="notification.status==0">
+                  <h4>Awaiting Collection</h4>
+                </div>
+                <div ng-show="notification.status==1">
+                  <h4>Item Collected</h4>
+                  <div class="control-group">
+                   <label class="control-label" for="KarungGuni">Amount Issued</label>
+                   <div class="controls">
+                     <h4 style="margin:5px 0; padding:0;"><span class="add-on">S$</span>&nbsp;{{notification.issued_amount}}</h4>
+                   </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+            <div ng-hide="notification" class="no-result">
+              Invalid Notification
+            </div>
+
+            <div class="clearfix">&nbsp;</div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
