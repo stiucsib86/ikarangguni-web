@@ -23,7 +23,7 @@
                 <div class="control-group" ng-repeat="l in settings.locations">
                   <label class="control-label" for="inputPostal">Location (Postal)</label>
                   <div class="controls">
-                    <input type="text" name="" placeholder="139951" ng-model="l.postal">
+                    <input type="text" name="" placeholder="139951" ng-model="l.postal_code" ng-model-onblur ng-change="UpdateSettingsLocation()">
                     <a class="btn btn-danger" ng-click="DeleteSettingsLocation()"><i class="icon-trash"></i>&nbsp; Delete</a>
                   </div>
                 </div>
@@ -32,11 +32,6 @@
                   <div class="controls">
                     <a class="btn btn-success" ng-click="AddSettingsLocation()"><i class="icon-plus"></i>&nbsp; Add More</a>
                   </div>
-                </div>
-
-                <div class="form-actions">
-                  <button type="submit" class="btn btn-primary">Add More</button>
-                  <button type="button" class="btn">Cancel</button>
                 </div>
 
               </div>

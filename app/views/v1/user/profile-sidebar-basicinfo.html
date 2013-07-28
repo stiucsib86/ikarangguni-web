@@ -7,11 +7,11 @@
         <img class="img-polaroid" ng-src="//graph.facebook.com/{{user_profile.username}}/picture" style="box-sizing: border-box;" />
       </a>
     </div>
-    <div class="span7" ng-show="user_profile.user_type==0">
+    <div class="span7" ng-show="auth.user.user_type==0">
       <p>Amount Earned</p>
       <h4 ng-controller="UserPayoutCtrl">S$ {{user_payout.sum || 0.00}}</h4>
     </div>
-    <div class="span7" ng-show="user_profile.user_type==1">
+    <div class="span7" ng-show="auth.user.user_type==1">
       <p>Amount Issued</p>
       <h4 ng-controller="UserPayoutIssuedCtrl">S$ {{user_payout_issued.sum || 0.00}}</h4>
     </div>

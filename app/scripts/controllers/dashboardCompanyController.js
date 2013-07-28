@@ -42,7 +42,7 @@ function DashboardCompanyNotificationCtrl($http, $location, $rootScope, $scope, 
     });
   };
 
- $scope.UpdatePayoutNotification = function() {
+  $scope.UpdatePayoutNotification = function() {
     $http({
       method: 'POST',
       withCredentials: true,
@@ -128,32 +128,87 @@ function DashboardCompanyNotificationsCtrl($http, $location, $rootScope, $scope)
 
 function DashboardCompanySettingsCtrl($http, $location, $rootScope, $scope) {
 
+  var geocoder = new google.maps.Geocoder();
+
   $scope.GetCompanySettings = function() {
-    $scope.settings = {
-      locations: [
-        {
-          postal: 139951
-        },
-        {
-          postal: 550425
-        }
-      ]
-    };
+    $http({
+      method: 'JSONP',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'settings/',
+      params: {
+        callback: 'JSON_CALLBACK'
+      }
+    }).success(function(data, status) {
+      $scope.settings = data.data;
+    }).error(function(data, status, headers, config) {
+    });
   };
 
   $scope.AddSettingsLocation = function() {
     ($scope.settings) || ($scope.settings = {});
     ($scope.settings.locations) || ($scope.settings.locations = []);
 
-    $scope.settings.locations.push({});
+    $http({
+      method: 'POST',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'settings/location',
+    }).success(function(data, status) {
+      console.log('data', data);
+      $scope.settings.locations.push(data.data);
+    }).error(function(data, status, headers, config) {
+    });
 
+  };
+
+  $scope.UpdateSettingsLocation = function() {
+    ($scope.settings) || ($scope.settings = {});
+    ($scope.settings.locations) || ($scope.settings.locations = []);
+
+    var $_scope = this;
+
+    geocoder.geocode({'address': 'Singapore ' + $_scope.l.postal_code}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        var location = results[0].geometry.location;
+        var latlng = new google.maps.LatLng(location.lat(), location.lng());
+
+        $_scope.l.latitude = location.lat();
+        $_scope.l.longitude = location.lng();
+
+        console.log($_scope.l);
+
+        $http({
+          method: 'POST',
+          withCredentials: true,
+          url: $rootScope._app.url.api + 'settings/location',
+          data: $_scope.l
+        }).success(function(data, status) {
+        }).error(function(data, status, headers, config) {
+        });
+      } else {
+        console.warn("Geocode was not successful for the following reason: " + status);
+      }
+    });
   };
 
   $scope.DeleteSettingsLocation = function() {
     if (!$scope.settings || !$scope.settings.locations) {
       return;
     }
-    $scope.settings.locations.splice(this.$index, 1);
+
+    var $_scope = this;
+
+    $http({
+      method: 'POST',
+      withCredentials: true,
+      url: $rootScope._app.url.api + 'settings/remove_location',
+      params: {
+        callback: 'JSON_CALLBACK'
+      },
+      data: this.l
+    }).success(function(data, status) {
+      $scope.settings.locations.splice($_scope.$index, 1);
+    }).error(function(data, status, headers, config) {
+    });
   };
 
   (function() {

@@ -11,7 +11,7 @@
 
         <div class="dashboard-content">
           <div class="top">
-            <h2>{{notification.item_type}}</h2>
+            <h2>Item: {{notification.item_type}}</h2>
           </div>
           <div class="middle">
 
@@ -21,7 +21,7 @@
                 <div class="control-group">
                   <label class="control-label" for="inputEmail">Item Photo</label>
                   <div class="controls">
-                    <img ng-src="{{notification.photo}}" style="min-width:200px; max-width: 300px;" />
+                    <img class="img-polaroid" ng-src="{{notification.photo}}" style="min-width:200px; max-width: 300px;" />
                   </div>
                 </div>
 
@@ -30,10 +30,12 @@
                   <div class="controls">
 
                     <div>
-                      <b>{{notification.unit_no}}, {{notification.postal_code}}</b>
+                      <input class="input-block-level" type="text" disabled value="{{notification.unit_no}}, {{notification.postal_code}}" />
                     </div>
 
-                    <div>
+                    <div class="clearfix">&nbsp;</div>
+
+                    <div class="img-polaroid">
                       <div class="map-canvas-block" id="map-canvas"></div>
                     </div>
 
@@ -73,7 +75,7 @@
                   <div class="control-group" ng-show="notification.issued_amount > 0">
                    <label class="control-label" for="KarungGuni">Amount Issued</label>
                    <div class="controls">
-                     <h4 style="margin:5px 0; padding:0;"><span class="add-on">S$</span>&nbsp;{{notification.issued_amount}}</h4>
+                     <h3 style="margin:5px 0; padding:0;"><span class="add-on">S$</span>&nbsp;{{notification.issued_amount}}</h3>
                    </div>
                   </div>
                   <div class="control-group" ng-show="notification.remarks && notification.issued_amount > 0">

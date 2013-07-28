@@ -123,6 +123,28 @@ function CleaningCtrl($scope, $rootScope, $route, $routeParams, $http, $location
 		var userUnitNo = $('#unitNo').val();
 		var selectedKarungguniId = $('#selectedKarungguni:checked').val();
 		var itemType = $('#itemType').val();
+		
+		if(!image.src) {
+			alert("Please snap a photo");
+			return;
+		}
+		if(!userPostalCode){
+			alert("Please input a postal code");
+			return;
+		}
+		if(!userUnitNo){
+			alert("Please input an unit number");
+			return;
+		}
+		if(!selectedKarungguniId){
+			alert("Please select a KarungGuni");
+			return;
+		}
+		if(!itemType){
+			alert("Please input an item type");
+			return;
+		}
+		
 
 		$timeout(function() {
 			var formData = {
